@@ -1,7 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Carousel from './Carousel/Carousel'
 import Header from '../../layouts/Header'
+import Carousel from './Carousel/Carousel'
+import Gallery from './Gallery/Gallery';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,7 +22,8 @@ export default function MediaCard() {
 
     <div className={classes.root}>
       <Header item={'Home'} />
-      <Carousel></Carousel>
+      <Carousel/>
+      <Gallery/>
     </div>
   );
 }
