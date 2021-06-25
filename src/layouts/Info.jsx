@@ -10,18 +10,30 @@ const useStyles = makeStyles((theme) => ({
     textStyle: {
         color: theme.palette.text.secondary,
         fontSize: 14,
-        padding: 8
+        padding: 8,
+        [theme.breakpoints.down('801')]: {
+            fontSize: 13,
+        },
+        [theme.breakpoints.down('1300')]: {
+            marginTop: 18
+        },
     },
     numberStyle: {
         color: theme.palette.text.secondary,
         fontSize: 13,
         marginTop: 3,
-        padding: 7
+        padding: 7,
+        [theme.breakpoints.down('801')]: {
+            fontSize: 12,
+        },
     },
     infoStyle: {
         color: theme.palette.secondary.light,
         fontSize: 15,
-        padding: 8
+        padding: 8,
+        [theme.breakpoints.down('801')]: {
+            fontSize: 14,
+        },
     },
     containerCenter: {
         flexGrow: 1,
@@ -53,7 +65,7 @@ export default function Info() {
                             <Typography className={classes.numberStyle} variante='h6' >
                                 +591 77777777
                             </Typography>
-                            <Typography className={classes.textStyle} variante='h6' >
+                            <Typography className={classes.numberStyle} variante='h6' >
                                 techome@gmail.com
                             </Typography>
                             </Grid>
