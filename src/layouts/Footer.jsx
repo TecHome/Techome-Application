@@ -12,14 +12,20 @@ const useStyles = makeStyles((theme) => ({
   textStyle: {
     color: theme.palette.text.secondary,
     fontSize: 18,
-    padding: 0
+    padding: 0,
+    [theme.breakpoints.down('650')]: {
+      fontSize: 15,
+    },
   },
   headerStyle: {
     color: theme.palette.text.secondary,
     fontSize: 25,
-    padding: 15
+    padding: 15,
+    [theme.breakpoints.down('650')]: {
+      fontSize: 23,
+    },
   },
-  divider:{
+  divider: {
     marginTop: 15,
     marginBottom: 15,
     marginLeft: 50,
@@ -40,7 +46,7 @@ export default function Footer() {
         <Typography className={classes.textStyle} variante='h5' >
           SuperMall # 7 Horario de Atencion: Lun - Sab de 10:00 - 20:00
         </Typography>
-        <Divider className={classes.divider}/>
+        <Divider className={classes.divider} />
         <Typography className={classes.textStyle} variante='h5' >
           © 2020 Copyright: UCB - Universidad Catolica Boliviana
         </Typography>

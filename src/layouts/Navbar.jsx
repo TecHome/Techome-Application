@@ -23,6 +23,9 @@ const useStyles = makeStyles((theme) => ({
     },
     icon: {
         fontSize: 35,
+        [theme.breakpoints.down('804')]: {
+            fontSize: 30,
+        },
     },
     buttonSelected: {
         color: theme.palette.secondary.main,
@@ -31,7 +34,10 @@ const useStyles = makeStyles((theme) => ({
         '&:hover': {
             backgroundColor: theme.palette.primary.dark,
             color: theme.palette.secondary.main,
-        }
+        },
+        [theme.breakpoints.down('804')]: {
+            fontSize: 18,
+        },
     },
     buttonUnselected: {
         color: theme.palette.text.primary,
@@ -39,18 +45,31 @@ const useStyles = makeStyles((theme) => ({
         '&:hover': {
             backgroundColor: theme.palette.primary.dark,
             color: theme.palette.secondary.main,
-        }
+        },
+        [theme.breakpoints.down('804')]: {
+            fontSize: 17,
+        },
     },
     image: {
         width: 50,
-        height: 50
-    },
-    offset:{
-        minHeight: 95,
-        [`${theme.breakpoints.up('xs')} and (orientation: landscape)`]: {
-            minHeight: 87,
+        height: 50,
+        [theme.breakpoints.down('804')]: {
+            width: 40,
+            height: 40,
         },
-        [theme.breakpoints.up('sm')]: {
+        [theme.breakpoints.down('737')]: {
+            marginTop: 18,
+        },
+    },
+    offset: {
+        minHeight: 200,
+        [theme.breakpoints.up('733')]: {
+            minHeight: 165,
+        },
+        [theme.breakpoints.up('736')]: {
+            minHeight: 137,
+        },
+        [theme.breakpoints.up('1299')]: {
             minHeight: 103,
         },
     }
@@ -63,13 +82,13 @@ export default function Navbar({ item }) {
 
     return (
         <>
-            
+
             <AppBar className={classes.navbar} position="fixed" >
-                
+
                 <Grid item xs={12}>
-                    <Info/>
+                    <Info />
                 </Grid>
-               
+
                 <Toolbar>
                     <Grid container spacing={3}>
                         <Grid item xs={2}>
@@ -83,35 +102,35 @@ export default function Navbar({ item }) {
                                 to="/home"
                             >
                                 INICIO
-                        </Button>
+                            </Button>
                             <Button
                                 className={'Products' === item ? classes.buttonSelected : classes.buttonUnselected}
                                 component={Link}
                                 to="/products"
                             >
                                 PRODUCTOS
-                        </Button  >
+                            </Button  >
                             <Button
                                 className={'Pcs' === item ? classes.buttonSelected : classes.buttonUnselected}
                                 component={Link}
                                 to="/pcs"
                             >
                                 PCs
-                        </Button>
+                            </Button>
                             <Button
                                 className={'Consoles' === item ? classes.buttonSelected : classes.buttonUnselected}
                                 component={Link}
                                 to="/consoles"
                             >
                                 CONSOLAS
-                        </Button  >
+                            </Button  >
                             <Button
                                 className={'Support' === item ? classes.buttonSelected : classes.buttonUnselected}
                                 component={Link}
                                 to="/support"
                             >
                                 SOPORTE
-                        </Button>
+                            </Button>
                         </Grid>
 
 
