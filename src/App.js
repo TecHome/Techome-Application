@@ -2,7 +2,10 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 import Home from './components/Home/Home';
 import Products from './components/Product/Products';
+import Product from './components/Product/Product';
+import Items from './components/Product/Items';
 import PCs from './components/PC/PCs';
+import PC from './components/PC/PC';
 import Consoles from './components/Console/Consoles';
 import Support from './components/Support/Support';
 import Footer from './layouts/Footer';
@@ -32,6 +35,9 @@ const theme = createMuiTheme({
     text: {
       primary: '#EBEBEB',
       secondary: '#ABABAB',
+    },
+    action: {
+      disabled: '#D1D1D1',
     }
   },
   typography: {
@@ -67,8 +73,23 @@ function App() {
           />
           <Route
             exact
+            path="/products/:id"
+            component={Product}
+          />
+          <Route
+            exact
+            path="/product/:id"
+            component={Items}
+          />
+          <Route
+            exact
             path="/pcs"
             component={PCs}
+          />
+          <Route
+            exact
+            path="/pcs/:id"
+            component={PC}
           />
           <Route
             exact

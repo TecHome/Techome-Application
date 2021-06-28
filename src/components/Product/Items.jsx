@@ -1,10 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../../layouts/Header'
 import { Grid, Typography, Divider, Card, CardHeader, Button, CardMedia, CardContent, CardActions, makeStyles } from '@material-ui/core';
-import { getPCs } from '../../services/pc';
-import PC from '../../assets/images/pc/pc_bg.jpg'
-
+import { getProducts } from '../../services/product';
+import Header from '../../layouts/Header'
+import Keyboard from '../../assets/images/gallery/keyboard.jpg';
+import Microphone from '../../assets/images/gallery/microphone.jpg';
+import Mouse from '../../assets/images/gallery/mouse.jpg';
+import Mousepad from '../../assets/images/gallery/mousepad.jpg';
+import Ram from '../../assets/images/gallery/ram.jpg';
+import Headphone from '../../assets/images/gallery/headphone2.jpg';
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -107,30 +111,74 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function PCs() {
-
+export default function Items(props) {
     const classes = useStyles();
-
-    const [pcs, setPCs] = useState([]);
+    const [page, setPage] = useState(props.match.params.id)
+    const [title, setTitle] = useState('')
+    const [bg, setBg] = useState(null)
+    const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        getDataPCs();
-    }, []);
+        console.log(page)
+        setPageName();
+        getDataProducts(props.match.params.id);
+        window.scrollTo(0, 0);
+    }, [props.match.params.id]);
 
-    function getDataPCs() {
-        getPCs()
-            .then((response) => {
-                return response.data;
-            })
-            .then((response) => {
-                console.log(response.response)
-                setPCs(response.response);
-            })
+    function setPageName() {
+        switch (page) {
+            case "headphones":
+                setTitle('Audifonos');
+                setBg(Headphone);
+                console.log(title);
+                break;
+            case "microphones":
+                setTitle('Microfonos');
+                setBg(Microphone);
+                console.log(title);
+                break;
+            case "mouses":
+                setTitle('Mouses');
+                setBg(Mouse);
+                console.log(title);
+                break;
+            case "mousepads":
+                setTitle('Mouse Pads');
+                setBg(Mousepad);
+                console.log(title);
+                break;
+            case "keyboards":
+                setTitle('Teclados');
+                setBg(Keyboard);
+                console.log(title);
+                break;
+            case "memories":
+                setTitle('Memorias');
+                setBg(Ram);
+                console.log(title);
+                break;
+            default:
+                setTitle('Error');
+                setBg(Headphone);
+                console.log(title);
+                break;
+        }
+    }
+
+    function getDataProducts(type) {
+        getProducts()
+        .then((response) => {
+            return response.data;
+        })
+        .then((response) => {
+            console.log(response.response.filter(item => item.type === type))
+            setProducts(response.response.filter(item => item.type === type));
+        })
     }
 
     return (
         <>
-            <Header item={'PCs'} />
+            <Header item={'Products'} />
             <Grid className={classes.container} container  >
                 <Grid
                     item xs={12} sm={12}
@@ -139,14 +187,14 @@ export default function PCs() {
                         className={classes.header}
                         variante='h1'
                     >
-                        Computadoras
+                        {title}
                     </Typography>
                     <Divider className={classes.divider} />
 
                     <img
                         className="d-block w-100"
-                        src={PC}
-                        alt='Pcs'
+                        src={bg}
+                        alt='Products'
                     />
                 </Grid>
 
@@ -156,7 +204,7 @@ export default function PCs() {
                     className={classes.root}
                     container
                 >
-                    {pcs.map(pc => (
+                    {products.map(product => (
                         <>
                             <Grid
                                 align="center"
@@ -168,12 +216,12 @@ export default function PCs() {
                                     <CardHeader
                                         titleTypographyProps={{ variant: 'h4' }}
                                         className={classes.cardHeader}
-                                        title={pc.product.brand}
+                                        title={product.product.brand}
                                     // subheader="September 14, 2016"
                                     />
                                     <CardMedia
                                         className={classes.media}
-                                        image={pc.product.imageCard}
+                                        image={product.product.imageCard}
                                         title="Paella dish"
                                     />
 
@@ -187,7 +235,7 @@ export default function PCs() {
                                                 variant="p"
                                                 align="center"
                                             >
-                                                {pc.product.name}
+                                                {product.product.name}
                                             </Typography>
                                         </div>
                                     </CardContent>
@@ -200,7 +248,7 @@ export default function PCs() {
                                             variant="contained"
                                             exact 
                                             component={Link}
-                                            to={`/pcs/${pc.id}`}
+                                            to={`/products/${product.id}`}
                                         >
                                             Leer Mas
                                         </Button>

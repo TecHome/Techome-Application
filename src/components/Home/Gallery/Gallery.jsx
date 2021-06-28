@@ -7,6 +7,7 @@ import Mouse from '../../../assets/images/gallery/mouse.jpg';
 import Mousepad from '../../../assets/images/gallery/mousepad.jpg';
 import Ram from '../../../assets/images/gallery/ram.jpg';
 import Keyboard2 from '../../../assets/images/gallery/keyboard2.jpg';
+import Headphone from '../../../assets/images/gallery/headphone2.jpg';
 // 1900 x 600
 
 const useStyles = makeStyles((theme) => ({
@@ -59,11 +60,19 @@ export default function Gallery() {
 
     const gallery = [
         {
+            id: 7,
+            src: Headphone,
+            content: 'Audifonos',
+            alt: 'Gallery',
+            route: '/product/headphones',
+            position: false,
+        },
+        {
             id: 1,
             src: Keyboard,
             content: 'Teclados',
             alt: 'Gallery',
-            route: '/peripherals/keyboards',
+            route: '/product/keyboards',
             position: true,
         },
         {
@@ -71,7 +80,7 @@ export default function Gallery() {
             src: Mouse,
             content: 'Mouses',
             alt: 'Gallery',
-            route: '/peripherals/mouses',
+            route: '/product/mouses',
             position: false
         },
         {
@@ -79,7 +88,7 @@ export default function Gallery() {
             src: Ram,
             content: 'Memoria Ram',
             alt: 'Gallery',
-            route: '/peripherals/memories',
+            route: '/product/memories',
             position: true
         },
         {
@@ -87,7 +96,7 @@ export default function Gallery() {
             src: Microphone,
             content: 'Microfonos',
             alt: 'Gallery',
-            route: '/peripherals/microphones',
+            route: '/product/microphones',
             position: false
         },
         {
@@ -95,7 +104,7 @@ export default function Gallery() {
             src: Mousepad,
             content: 'MousePads',
             alt: 'Gallery',
-            route: '/peripherals/mousepads',
+            route: '/product/mousepads',
             position: true
         },
         {
@@ -103,7 +112,7 @@ export default function Gallery() {
             src: Keyboard2,
             content: 'Teclados',
             alt: 'Gallery 6',
-            route: '/peripherals/keyboards',
+            route: '/product/keyboards',
             position: false
         },
     ];
@@ -111,7 +120,7 @@ export default function Gallery() {
     return (
         <>
             {gallery.map(item => (
-                <>
+                <div key={item.id}>
                     <img
                         className="d-block w-100"
                         src={item.src}
@@ -137,7 +146,7 @@ export default function Gallery() {
                             Leer Mas
                         </Button>
                     </Grid>
-                </>
+                </div>
             ))}
         </>
     );

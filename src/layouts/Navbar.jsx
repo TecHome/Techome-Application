@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
             color: theme.palette.secondary.main,
         },
         [theme.breakpoints.down('804')]: {
-            fontSize: 17,
+            fontSize: 18,
         },
     },
     image: {
@@ -57,19 +57,22 @@ const useStyles = makeStyles((theme) => ({
             width: 40,
             height: 40,
         },
-        [theme.breakpoints.down('737')]: {
+        [theme.breakpoints.down('733')]: {
             marginTop: 18,
         },
     },
     offset: {
         minHeight: 200,
-        [theme.breakpoints.up('733')]: {
+        [theme.breakpoints.up('716')]: {
             minHeight: 165,
         },
-        [theme.breakpoints.up('736')]: {
+        [theme.breakpoints.up('720')]: {
+            minHeight: 159,
+        },
+        [theme.breakpoints.up('734')]: {
             minHeight: 137,
         },
-        [theme.breakpoints.up('1299')]: {
+        [theme.breakpoints.up('1283')]: {
             minHeight: 103,
         },
     }
@@ -92,7 +95,11 @@ export default function Navbar({ item }) {
                 <Toolbar>
                     <Grid container spacing={3}>
                         <Grid item xs={2}>
-                            <img className={classes.image} src={Logo} alt="TecHome" style={{}} />
+                            <img
+                                className={classes.image}
+                                src={Logo}
+                                alt="TecHome"
+                            />
                         </Grid>
 
                         <Grid className={classes.containerCenter} item xs={8} >
@@ -111,7 +118,7 @@ export default function Navbar({ item }) {
                                 PRODUCTOS
                             </Button  >
                             <Button
-                                className={'Pcs' === item ? classes.buttonSelected : classes.buttonUnselected}
+                                className={'PCs' === item ? classes.buttonSelected : classes.buttonUnselected}
                                 component={Link}
                                 to="/pcs"
                             >

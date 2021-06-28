@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('801')]: {
             fontSize: 13,
         },
-        [theme.breakpoints.down('1300')]: {
+        [theme.breakpoints.down('1283')]: {
             marginTop: 18
         },
     },
