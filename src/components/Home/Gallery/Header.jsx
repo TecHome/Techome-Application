@@ -90,7 +90,7 @@ export default function HeaderProducts() {
                 <Grid
                     className={classes.grid}
                     component={Link}
-                    to='/peripherals/headphones'
+                    to='/product/headphones'
                     item xs={12} sm={2}
                 >
                     <img
@@ -103,7 +103,7 @@ export default function HeaderProducts() {
                 <Grid
                     className={classes.grid}
                     component={Link}
-                    to='/peripherals/microphones'
+                    to='/product/microphones'
                     item xs={12} sm={2}
                 >
                     <img
@@ -116,7 +116,7 @@ export default function HeaderProducts() {
                 <Grid
                     className={classes.grid}
                     component={Link}
-                    to='/peripherals/keyboards'
+                    to='/product/keyboards'
                     item xs={12} sm={2}
                 >
                     <img
@@ -129,7 +129,7 @@ export default function HeaderProducts() {
                 <Grid
                     className={classes.grid}
                     component={Link}
-                    to='/peripherals/mouses'
+                    to='/product/mouses'
                     item xs={12} sm={2}
                 >
                     <img
@@ -142,7 +142,7 @@ export default function HeaderProducts() {
                 <Grid
                     className={classes.grid}
                     component={Link}
-                    to='/peripherals/mousepads'
+                    to='/product/mousepads'
                     item xs={12} sm={2}
                 >
                     <img
@@ -155,7 +155,7 @@ export default function HeaderProducts() {
                 <Grid
                     className={classes.grid}
                     component={Link}
-                    to='/peripherals/memories'
+                    to='/product/memories'
                     item xs={12} sm={2}
                 >
                     <img
@@ -168,7 +168,7 @@ export default function HeaderProducts() {
                 <Grid
                     className={classes.text}
                     component={Link}
-                    to='/peripherals/headphones'
+                    to='/product/headphones'
                     item xs={12} sm={2}
                 >
                     <Typography variante='h5' >
@@ -179,7 +179,7 @@ export default function HeaderProducts() {
                 <Grid
                     className={classes.text}
                     component={Link}
-                    to='/peripherals/microphones'
+                    to='/product/microphones'
                     item xs={12} sm={2}
                 >
                     <Typography variante='h5' >
@@ -190,7 +190,7 @@ export default function HeaderProducts() {
                 <Grid
                     className={classes.text}
                     component={Link}
-                    to='/peripherals/keyboards'
+                    to='/product/keyboards'
                     item xs={12} sm={2}
                 >
                     <Typography variante='h5' >
@@ -201,7 +201,7 @@ export default function HeaderProducts() {
                 <Grid
                     className={classes.text}
                     component={Link}
-                    to='/peripherals/mouses'
+                    to='/product/mouses'
                     item xs={12} sm={2}
                 >
                     <Typography variante='h5' >
@@ -212,7 +212,7 @@ export default function HeaderProducts() {
                 <Grid
                     className={classes.text}
                     component={Link}
-                    to='/peripherals/mousepads'
+                    to='/product/mousepads'
                     item xs={12} sm={2}
                 >
                     <Typography variante='h5' >
@@ -223,7 +223,7 @@ export default function HeaderProducts() {
                 <Grid
                     className={classes.text}
                     component={Link}
-                    to='/peripherals/memories'
+                    to='/product/memories'
                     item xs={12} sm={2}
                 >
                     <Typography variante='h5' >
