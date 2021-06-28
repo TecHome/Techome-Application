@@ -29,36 +29,63 @@ import { Container } from '@material-ui/core';
 
 import FooterSupport from '../../layouts/FooterSupport';
 
+import WhatsAppIcon from '@material-ui/icons/WhatsApp';
+import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
+
 import Box from '@material-ui/core/Box';
 
-const useStyles = makeStyles((theme) =>({
-  root: {
-    lexGrow: 1,
-  },
-  media: {
-    height: 140,
-  },
-  paper: {
-    height: 240,
-    width: 200,
-  },
-  control: {
-    padding: theme.spacing(2),
-  },
-  text: {
-    textAlign: "center",
-  },
-  margin: {
-    marginTop:70,
-  },
-  backgroundColor: {
-      backgroundColor: "#EBEBEB"
-  },
-  backgroundColorTextNavBar:{
-    color: theme.palette.text.primary,
-    background: theme.palette.primary.main,
-    marginTop:-15,
-  },
+const useStyles = makeStyles((theme) => ({
+    root: {
+        lexGrow: 1,
+    },
+    media: {
+        height: 140,
+    },
+    paper: {
+        height: 240,
+        width: 200,
+    },
+    control: {
+        padding: theme.spacing(2),
+    },
+    text: {
+        textAlign: "center",
+    },
+    margin: {
+        marginTop: 70,
+    },
+    backgroundColor: {
+        backgroundColor: "#EBEBEB"
+    },
+    backgroundColorTextNavBar: {
+        color: theme.palette.text.primary,
+        background: theme.palette.primary.main,
+        marginTop: -15,
+        [theme.breakpoints.down('1300')]: {
+            marginTop: 25,
+        },
+        [theme.breakpoints.down('1283')]: {
+            marginTop: -10,
+        },
+        [theme.breakpoints.down('751')]: {
+            marginTop: 10,
+        },
+        [theme.breakpoints.down('734')]: {
+            marginTop: -5,
+        },
+        [theme.breakpoints.down('733')]: {
+            marginTop: 18,
+        },
+        [theme.breakpoints.down('716')]: {
+            marginTop: -20,
+        },
+        [theme.breakpoints.down('600')]: {
+            marginTop: -35,
+        },
+        [theme.breakpoints.down('512')]: {
+            marginTop: 10,
+        },
+    },
 }));
 
 
@@ -66,106 +93,112 @@ export default function Support({ item }) {
     const classes = useStyles();
     return (
         <>
-            
-            
+
+
             <div className={classes.backgroundColor}>
-                
+
                 <div className={classes.margin}>
-                    <Header item={'Support'}/>
-                    <NavbarPreguntasFrecuentes/>
+                    <Header item={'Support'} />
+                    <NavbarPreguntasFrecuentes />
                     <div className={classes.backgroundColorTextNavBar}>
                         <p align="center">Acceda facilmente a toda la información que necesita sobre cualquier producto, desde <br /> preguntas frecuentes hasta guías de instalación, controladores y descargas.</p>
                     </div>
 
                     <CardHeader></CardHeader>
                     <Container maxWidth="25%">
-                    <Grid container spacing={3}>
-                        <Grid item xs={6}>
-                        
-                        <Card className={classes.root} style={{ backgroundColor: "white" }}>                
-                            <CardActionArea>                  
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="p" color="primary">
-                                <b>Contactar Servicio al Cliente</b>
-                                </Typography>
-                                <Typography variant="body2" color="primary" component="p"  >
-                                Si tiene una solicitud urgente con respecto a un pedido, llamenos durante el horario comercial para obtener una respuesta inmediata
-                                </Typography>
-                                
-                                <Typography variant="body2" color="primary" component="p">
-                                <div class="MuiCardHeader-root">
-                                    <div class="MuiCardHeader-avatar">
-                                    <MailOutlineIcon fontSize="large"></MailOutlineIcon>
-                                    </div>
-                                    <div class="MuiCardHeader-content">
-                                        <span class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"><b>Email Servicio al Cliente</b></span>
-                                        <span class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorPrimary MuiTypography-displayBlock">Complete un formulario corto para enviar una solicitud por correo</span>
-                                        <Button size="small"  variant="contained" color="secondary">
-                                        Email
-                                        </Button>
-                                    </div>
-                                </div>
-                                <div class="MuiCardHeader-root">
-                                    <div class="MuiCardHeader-avatar">
-                                    <PhoneEnabledIcon fontSize="large"></PhoneEnabledIcon>
-                                    </div>
-                                    <div class="MuiCardHeader-content">
-                                        <span class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"><b>Teléfono Servicio al Cliente</b></span>
-                                        <span class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorPrimary MuiTypography-displayBlock">Lunes - Sábado 9:00 am - 8:00 pm</span>
-                                        <span class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorSecondary MuiTypography-displayBlock">+591 77777777</span>
-                                    </div>
-                                </div>
-                                </Typography>
-                            </CardContent>
-                            </CardActionArea>                  
-                        </Card>
+                        <Grid container spacing={3}>
+                            <Grid item xs={6}>
+
+                                <Card className={classes.root} style={{ backgroundColor: "white" }}>
+                                    <CardActionArea>
+                                        <CardContent>
+                                            <Typography gutterBottom variant="h5" component="p" color="primary">
+                                                <b>Contactar Servicio al Cliente</b>
+                                            </Typography>
+                                            <Typography variant="body2" color="primary" component="p"  >
+                                                Si tiene una solicitud urgente con respecto a un pedido, llamenos durante el horario comercial para obtener una respuesta inmediata
+                                            </Typography>
+
+                                            <Typography variant="body2" color="primary" component="p">
+                                                <div class="MuiCardHeader-root">
+                                                    <div class="MuiCardHeader-avatar">
+                                                        <MailOutlineIcon fontSize="large"></MailOutlineIcon>
+                                                    </div>
+                                                    <div class="MuiCardHeader-content">
+                                                        <span class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"><b>Email Servicio al Cliente</b></span>
+                                                        <span class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorPrimary MuiTypography-displayBlock">Complete un formulario corto para enviar una solicitud por correo</span>
+                                                        <Button href="mailto:techomecochabamba@gmail.com?subject=Comunicarme%20contigo&body=Quiero%20hablar%20contigo" target="_blank" style={{color: "white"}}size="small" variant="contained" color="secondary">
+                                                           <AlternateEmailIcon></AlternateEmailIcon> Email
+                                                        </Button>
+                                                    </div>
+                                                </div>
+                                                <div class="MuiCardHeader-root">
+                                                    <div class="MuiCardHeader-avatar">
+                                                        <PhoneEnabledIcon href="https://api.whatsapp.com/send?phone=59179338704&text=Hola%20Amigo%20" target="_blank" fontSize="large"></PhoneEnabledIcon>
+                                                    </div>
+                                                    <div class="MuiCardHeader-content">
+                                                        <span class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"><b>Teléfono Servicio al Cliente</b></span>
+                                                        <span class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorPrimary MuiTypography-displayBlock">Lunes - Sábado 9:00 am - 8:00 pm</span>
+                                                        <span class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorSecondary MuiTypography-displayBlock">+591 79338704</span>
+                                                        <Button href="https://api.whatsapp.com/send?phone=59179338704&text=Hola%20Amigo%20" target="_blank" style={{color: "green"}} size="small" variant="contained" color="primary">
+                                                            <WhatsAppIcon></WhatsAppIcon>whatsapp
+                                                        </Button>
+                                                    </div>
+                                                </div>
+                                            </Typography>
+                                        </CardContent>
+                                    </CardActionArea>
+                                </Card>
+                            </Grid>
+                            <Grid item xs={6}>
+                                <Card className={classes.root} style={{ backgroundColor: "white" }}>
+                                    <CardActionArea>
+                                        <CardContent>
+                                            <Typography gutterBottom variant="h5" component="p" color="primary">
+                                                <b>Contactar Soporte Técnico</b>
+                                            </Typography>
+                                            <Typography variant="body2" color="primary" component="p"  >
+                                                ¿Tiene dudas sobre un producto que ya posee? Pregunte a un experto
+                                            </Typography>
+
+                                            <Typography variant="body2" color="primary" component="p">
+                                                <div class="MuiCardHeader-root">
+                                                    <div class="MuiCardHeader-avatar">
+                                                        <MailOutlineIcon fontSize="large"></MailOutlineIcon>
+                                                    </div>
+                                                    <div class="MuiCardHeader-content">
+                                                        <span class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"><b>Email Soporte Técnico</b></span>
+                                                        <span class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorPrimary MuiTypography-displayBlock">Complete un formulario corto para enviar una solicitud por correo</span>
+                                                        <Button href="mailto:techomecochabamba@gmail.com?subject=Comunicarme%20contigo&body=Quiero%20hablar%20contigo" target="_blank" style={{color: "white"}} size="small" variant="contained" color="secondary">
+                                                            <AlternateEmailIcon></AlternateEmailIcon>Email
+                                                        </Button>
+                                                    </div>
+                                                </div>
+                                                <div class="MuiCardHeader-root">
+                                                    <div class="MuiCardHeader-avatar">
+                                                        <PhoneEnabledIcon  fontSize="large"></PhoneEnabledIcon>
+                                                    </div>
+                                                    <div class="MuiCardHeader-content">
+                                                        <span class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"><b>Teléfono Servicio al Cliente</b></span>
+                                                        <span class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorPrimary MuiTypography-displayBlock">Lunes - Sábado 9:00 am - 8:00 pm</span>
+                                                        <span class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorSecondary MuiTypography-displayBlock">+591 79338704</span>
+                                                        <Button href="https://api.whatsapp.com/send?phone=59179338704&text=Hola%20Amigo%20" target="_blank" style={{color: "green"}} size="small" variant="contained" color="primary">
+                                                            <WhatsAppIcon></WhatsAppIcon>whatsapp
+                                                        </Button>
+                                                    </div>
+                                                </div>
+                                            </Typography>
+                                        </CardContent>
+                                    </CardActionArea>
+                                </Card>
+                            </Grid>
                         </Grid>
-                        <Grid item xs={6}>
-                        <Card className={classes.root} style={{ backgroundColor: "white" }}>
-                            <CardActionArea>
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="p" color="primary">
-                                <b>Contactar Soporte Técnico</b> 
-                                </Typography>
-                                <Typography variant="body2" color="primary" component="p"  >
-                                ¿Tiene dudas sobre un producto que ya posee? Pregunte a un experto
-                                </Typography>
-                                
-                                <Typography variant="body2" color="primary" component="p">
-                                <div class="MuiCardHeader-root">
-                                    <div class="MuiCardHeader-avatar">
-                                    <MailOutlineIcon fontSize="large"></MailOutlineIcon>
-                                    </div>
-                                    <div class="MuiCardHeader-content">
-                                        <span class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"><b>Email Soporte Técnico</b></span>
-                                        <span class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorPrimary MuiTypography-displayBlock">Complete un formulario corto para enviar una solicitud por correo</span>
-                                        <Button size="small"  variant="contained" color="secondary">
-                                        Email
-                                        </Button>
-                                    </div>
-                                </div>
-                                <div class="MuiCardHeader-root">
-                                    <div class="MuiCardHeader-avatar">
-                                    <PhoneEnabledIcon fontSize="large"></PhoneEnabledIcon>
-                                    </div>
-                                    <div class="MuiCardHeader-content">
-                                        <span class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"><b>Teléfono Servicio al Cliente</b></span>
-                                        <span class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorPrimary MuiTypography-displayBlock">Lunes - Sábado 9:00 am - 8:00 pm</span>
-                                        <span class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorSecondary MuiTypography-displayBlock">+591 77777777</span>
-                                    </div>
-                                </div>
-                                </Typography>
-                            </CardContent>
-                            </CardActionArea>                  
-                        </Card>
-                        </Grid> 
-                    </Grid>
                     </Container>
                     <div className={classes.text}>
-                    <p>Brindamos servicio técnico en la tienda.</p>
+                        <p>Brindamos servicio técnico en la tienda.</p>
                     </div>
                 </div>
-            <FooterSupport></FooterSupport>
+                <FooterSupport></FooterSupport>
             </div>
         </>
     );

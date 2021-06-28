@@ -5,10 +5,19 @@ import { AppBar, Toolbar, Button, Grid, makeStyles, IconButton } from '@material
 const useStyles = makeStyles((theme) => ({
     navbar: {
         boxShadow: 'none',
-        marginTop: 135,
+        marginTop: 95,
         
-        [theme.breakpoints.up('xl')]: {
-            marginTop:95,
+        [theme.breakpoints.down('1300')]: {
+            marginTop:135,
+        },
+        [theme.breakpoints.down('751')]: {
+            marginTop:155,
+        },
+        [theme.breakpoints.down('734')]: {
+            marginTop:165,
+        },
+        [theme.breakpoints.down('733')]: {
+            marginTop:190,
         },
     },
     containerCenter: {

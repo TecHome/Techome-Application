@@ -31,12 +31,19 @@ export class MapContainer extends Component {
     };
    
     render() {
+      const style = {
+        maxWidth: "700px",
+        height: "350px",
+        overflowX: "hidden",
+        overflowY: "hidden"
+       };
+       const containerStyle = {
+        maxWidth: "700px",
+        height: "350px",
+       };
       return (
         <Map google={this.props.google} 
-            style={{maxWidth: "700px",
-            height: "200px",
-            overflowX: "hidden",
-            overflowY: "hidden"}}            
+            style={style} containerStyle={containerStyle}            
             initialCenter={{
                 lat: this.state.mapCenter.lat,
                 lng: this.state.mapCenter.lng
