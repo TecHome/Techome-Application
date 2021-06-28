@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
@@ -47,27 +47,27 @@ const rows = [
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    flexWrap: 'wrap',    
+    flexWrap: 'wrap',
   },
   textField: {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
     width: '25ch',
   },
-  rootGrid:{
+  rootGrid: {
     flexGrow: 1,
   },
-  container:{
+  container: {
     padding: '45px 250px 45px 150px',
   },
   table: {
     minWidth: 650,
   },
-  backgroundColorTextNavBar:{
+  backgroundColorTextNavBar: {
     color: theme.palette.text.primary,
     background: theme.palette.primary.main,
-    marginTop:-5,
-    fontSize:'40px'
+    marginTop: -5,
+    fontSize: '40px'
   },
 }));
 
@@ -75,22 +75,23 @@ export default function LayoutTextFields() {
   const classes = useStyles();
 
   const [counter, setCounter] = useState(1);
-  const increaseCounter = () => setCounter(counter+1);
-  const decreaseCounter = () => setCounter(counter-1);
+  const increaseCounter = () => setCounter(counter + 1);
+  const decreaseCounter = () => setCounter(counter - 1);
   return (
     <>
-        <Header item={'Checkout'}/>
-        <div className={classes.backgroundColorTextNavBar}>
-            <p align="center">Pago Seguro - Checkout</p>
-        </div>
-        <CardHeader></CardHeader>
-        <div className={classes.rootGrid}>
-          <Grid container spacing={3}>
-            <Grid item xs={6}>
-              <div className={classes.container}>
-                <div className={classes.root} style={{ backgroundColor: "black" }}>
-                  <div>
-                      <TextField
+      <Header item={'Checkout'} />
+      <div className={classes.backgroundColorTextNavBar}>
+        <p align="center">Pago Seguro - Checkout</p>
+      </div>
+      <CardHeader></CardHeader>
+      <div className={classes.rootGrid}>
+        <Grid container >
+          <Grid align="center" item xs={6} >
+            <div style={{ marginLeft: '5vw', marginRight: '5vw', marginBottom: '5vw' }}>
+              <div className={classes.root} style={{ backgroundColor: "black" }}>
+                <div>
+                  <div style={{ marginLeft: '1vw', marginRight: '1vw' }}>
+                    <TextField
                       id="standard-full-width"
                       label="1. Información del Contacto"
                       style={{ margin: 8 }}
@@ -98,10 +99,13 @@ export default function LayoutTextFields() {
                       fullWidth
                       margin="normal"
                       InputLabelProps={{
-                          shrink: true,
+                        shrink: true,
                       }}
-                      /> 
-                      <TextField
+                    />
+                  </div>
+
+                  <div style={{ marginLeft: '1vw', marginRight: '1vw' }}>
+                    <TextField
                       id="standard-full-width"
                       label="2. Información del Envío"
                       style={{ margin: 8 }}
@@ -110,10 +114,10 @@ export default function LayoutTextFields() {
                       margin="normal"
                       className={classes.textField}
                       InputLabelProps={{
-                          shrink: true,
+                        shrink: true,
                       }}
-                      />
-                      <TextField
+                    />
+                    <TextField
                       id="standard-full-width"
                       label=" "
                       style={{ margin: 8 }}
@@ -122,22 +126,23 @@ export default function LayoutTextFields() {
                       margin="normal"
                       className={classes.textField}
                       InputLabelProps={{
-                          shrink: true,
+                        shrink: true,
                       }}
-                      />
-                  </div>
-                  <div>
-                      <TextField
+                    />
+                    <TextField
                       id="standard-full-width"
                       style={{ margin: 8 }}
                       placeholder="Dirección"
                       fullWidth
                       margin="normal"
                       InputLabelProps={{
-                          shrink: true,
+                        shrink: true,
                       }}
-                      />
-                      <TextField
+                    />
+                  </div>
+
+                  <div style={{ marginLeft: '1vw', marginRight: '1vw' }}>
+                    <TextField
                       id="standard-full-width"
                       label=" "
                       style={{ margin: 8 }}
@@ -146,10 +151,10 @@ export default function LayoutTextFields() {
                       margin="normal"
                       className={classes.textField}
                       InputLabelProps={{
-                          shrink: true,
+                        shrink: true,
                       }}
-                      />
-                      <TextField
+                    />
+                    <TextField
                       id="standard-full-width"
                       label=" "
                       style={{ margin: 8 }}
@@ -158,12 +163,12 @@ export default function LayoutTextFields() {
                       margin="normal"
                       className={classes.textField}
                       InputLabelProps={{
-                          shrink: true,
+                        shrink: true,
                       }}
-                      />
+                    />
                   </div>
                   <div>
-                      <TextField
+                    <TextField
                       id="standard-full-width"
                       label=" "
                       style={{ margin: 8 }}
@@ -172,10 +177,10 @@ export default function LayoutTextFields() {
                       margin="normal"
                       className={classes.textField}
                       InputLabelProps={{
-                          shrink: true,
+                        shrink: true,
                       }}
-                      />
-                      <TextField
+                    />
+                    <TextField
                       id="standard-full-width"
                       label=" "
                       style={{ margin: 8 }}
@@ -184,10 +189,14 @@ export default function LayoutTextFields() {
                       margin="normal"
                       className={classes.textField}
                       InputLabelProps={{
-                          shrink: true,
+                        shrink: true,
                       }}
-                      />
-                      <TextField
+                    />
+                  </div>
+
+
+                  <div style={{ marginLeft: '1vw', marginRight: '1vw' }}>
+                    <TextField
                       id="standard-full-width"
                       label="3. Tiempo de Entrega Estimado"
                       style={{ margin: 8 }}
@@ -195,10 +204,13 @@ export default function LayoutTextFields() {
                       fullWidth
                       margin="normal"
                       InputLabelProps={{
-                          shrink: true,
+                        shrink: true,
                       }}
-                      />
-                      <TextField
+                    />
+                  </div>
+
+                  <div style={{ marginLeft: '1vw', marginRight: '1vw' }}>
+                    <TextField
                       id="standard-full-width"
                       label="4. Pago Seguro"
                       style={{ margin: 8 }}
@@ -206,118 +218,125 @@ export default function LayoutTextFields() {
                       fullWidth
                       margin="normal"
                       InputLabelProps={{
-                          shrink: true,
+                        shrink: true,
                       }}
-                      />
-                      <TextField
-                      id="standard-full-width"
-                      label=" "
-                      style={{ margin: 8 }}
-                      placeholder="Expiración"
-                      fullWidth
-                      margin="normal"
-                      className={classes.textField}
-                      InputLabelProps={{
-                          shrink: true,
-                      }}
-                      />
-                      <TextField
-                      id="standard-full-width"
-                      label=" "
-                      style={{ margin: 8 }}
-                      placeholder="CVC"
-                      fullWidth
-                      margin="normal"
-                      className={classes.textField}
-                      InputLabelProps={{
-                          shrink: true,
-                      }}
-                      />
-                      <Button size="small"  variant="contained" color="secondary">
-                        Confirmar
-                      </Button>                      
+                    />
+                  </div>
+
+                  <TextField
+                    id="standard-full-width"
+                    label=" "
+                    style={{ margin: 8 }}
+                    placeholder="Expiración"
+                    fullWidth
+                    margin="normal"
+                    className={classes.textField}
+                    InputLabelProps={{
+                      shrink: true,
+                    }}
+                  />
+                  <TextField
+                    id="standard-full-width"
+                    label=" "
+                    style={{ margin: 8 }}
+                    placeholder="CVC"
+                    fullWidth
+                    margin="normal"
+                    className={classes.textField}
+                    InputLabelProps={{
+                      shrink: true,
+                    }}
+                  />
+                  <div style={{ marginLeft: '30vw', marginTop: '1vw', marginBottom: '1vw' }}>
+                    <Button size="small" variant="contained" color="secondary">
+                      Confirmar
+                    </Button>
                   </div>
                 </div>
               </div>
-                
-            </Grid>
-            <Grid item xs={6}>
-              <div className={classes.container}>
-                <Card className={classes.root} style={{ backgroundColor: "#EBEBEB" }}>                
-                  <CardActionArea>                  
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="p" color="secondary" style={{ backgroundColor: "#C4C4C4" }}>
-                        <b>Orden</b>
-                        </Typography>
-                        
-                        <Typography variant="body2" color="primary" component="p">
-                        <div class="MuiCardHeader-root">
-                            <div class="MuiCardHeader-avatar">
-                            <img src={imageAudifono}  alt="SuperMall" width="110" height="120"></img>
-                            </div>
-                            <div class="MuiCardHeader-content">
-                                <span class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock">Audifonos - HyperX CloudX Stinger</span>
-                                <span class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorPrimary MuiTypography-displayBlock">$99.99</span>
-                                <Button size="small"  variant="contained" onClick={decreaseCounter}>
-                                -
-                                </Button>
-                                <Button size="small"  variant="contained" >
-                                  {counter}
-                                </Button>
-                                <Button size="small"  variant="contained" onClick={increaseCounter}>
-                                +
-                                </Button>
-                                  
-                            </div>
-                        </div>
-                        <div class="MuiCardHeader-root">
-                          <TableContainer component={Paper} style={{ backgroundColor: "#C4C4C4" }}>
-                            <Table className={classes.table} aria-label="simple table">
-                              <TableHead>
-                                <TableRow>
-                                  <TableCell style={{ color: "red" }} >Edit Cart</TableCell>
-                                  <TableCell align="right" style={{ color: "black" }} >SubTotal</TableCell>
-                                  <TableCell align="right" style={{ color: "black" }} >$99.99</TableCell>
-                                </TableRow>
-                              </TableHead>
-                              <TableBody>
-                                
-                                <TableRow>
-                                  <TableCell component="th" scope="row"></TableCell>
-                                  <TableCell align="right" style={{ color: "black" }} >Envio</TableCell>
-                                  <TableCell align="right" style={{ color: "black" }} >$10.00</TableCell>
-                                </TableRow>
-                                <TableRow>
-                                  <TableCell component="th" scope="row" style={{ color: "black" }}>1 Producto</TableCell>
-                                  <TableCell align="right" style={{ color: "black" }} >Total</TableCell>
-                                  <TableCell align="right" style={{ color: "black" }} >$109.99</TableCell>
-                                </TableRow>
-                                
-                              </TableBody>
-                            </Table>
-                          </TableContainer>
-                        </div>
-                        <TextField
-                                id="standard-full-width"
-                                style={{ margin: 8 }}
-                                placeholder="Código de Descuento"
-                                fullWidth
-                                margin="normal"                        
-                                style={{ backgroundColor: "black", color: "blue" }}
-                                InputLabelProps={{
-                                    shrink: true,
-                                }}
-                                />
-                        </Typography>
-                    </CardContent>
-                    </CardActionArea>                  
-                </Card>
-              </div>            
-            </Grid>
+            </div>
+
           </Grid>
-        </div>
-        
-            
+          <Grid align="center" item xs={6}>
+            <div style={{ marginTop: '2vw', marginLeft: '5vw', marginRight: '5vw', marginBottom: '5vw' }}>
+              <Card className={classes.root} style={{ backgroundColor: "#EBEBEB" }}>
+                <CardActionArea>
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="p" color="secondary" style={{ backgroundColor: "#C4C4C4" }}>
+                      <b>Orden</b>
+                    </Typography>
+
+                    <Typography variant="body2" color="primary" component="p">
+                      <div class="MuiCardHeader-root">
+                        <div class="MuiCardHeader-avatar" >
+                          <img src={imageAudifono} alt="SuperMall" width="220" height="210"></img>
+                        </div>
+                        <div class="MuiCardHeader-content">
+
+                          <span class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock">Audifonos - HyperX CloudX Stinger</span>
+                          <span class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorPrimary MuiTypography-displayBlock">$99.99</span>
+                          <Button size="small" variant="contained" onClick={decreaseCounter}>
+                            -
+                          </Button>
+                          <Button size="small" variant="contained" >
+                            {counter}
+                          </Button>
+                          <Button size="small" variant="contained" onClick={increaseCounter}>
+                            +
+                          </Button>
+
+
+
+                        </div>
+                      </div>
+                      <div class="MuiCardHeader-root">
+                        <TableContainer component={Paper} style={{ backgroundColor: "#C4C4C4", marginTop: 5, width: '70vw' }}>
+                          <Table className={classes.table} aria-label="simple table">
+                            <TableHead>
+                              <TableRow >
+                                <TableCell style={{ color: "red", borderBottom: "none" }} >Edit Cart</TableCell>
+                                <TableCell align="right" style={{ color: "black", borderBottom: "none" }} >SubTotal</TableCell>
+                                <TableCell align="right" style={{ color: "black", borderBottom: "none" }} >$99.99</TableCell>
+                              </TableRow>
+                            </TableHead>
+                            <TableBody>
+
+                              <TableRow>
+                                <TableCell component="th" scope="row" style={{ borderBottom: "none" }}></TableCell>
+                                <TableCell align="right" style={{ color: "black", borderBottom: "none" }} >Envio</TableCell>
+                                <TableCell align="right" style={{ color: "black", borderBottom: "none" }} >$10.00</TableCell>
+                              </TableRow>
+                              <TableRow>
+                                <TableCell component="th" scope="row" style={{ color: "black", borderBottom: "none" }}>1 Producto</TableCell>
+                                <TableCell align="right" style={{ color: "black", borderBottom: "none" }} >Total</TableCell>
+                                <TableCell align="right" style={{ color: "black", borderBottom: "none" }} >$109.99</TableCell>
+                              </TableRow>
+
+                            </TableBody>
+                          </Table>
+                        </TableContainer>
+                      </div>
+                      <TextField
+                        id="standard-full-width"
+                        style={{ margin: 8 }}
+                        placeholder="Código de Descuento"
+                        fullWidth
+                        margin="normal"
+                        style={{ backgroundColor: "black", color: "blue" }}
+                        InputLabelProps={{
+                          shrink: true,
+                        }}
+                      />
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </div>
+          </Grid>
+        </Grid>
+      </div>
+
+
     </>
   );
 }

@@ -40,80 +40,103 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(1),
   },
   margin: {
-    marginTop:70,
+    marginTop: 70,
   },
-  backgroundColor:{
+  backgroundColor: {
     color: theme.palette.text.primary,
     background: theme.palette.primary.main,
   },
   image: {
     width: '100%',
-    maxWidth:'1700px',
+    maxWidth: '1700px',
+  },
+  backgroundColorTextNavBar: {
+    color: theme.palette.text.primary,
+    background: theme.palette.primary.main,
+    marginTop: -15,
+    [theme.breakpoints.down('751')]: {
+      marginTop: 10,
+    },
+    [theme.breakpoints.down('734')]: {
+      marginTop: -5,
+    },
+    [theme.breakpoints.down('733')]: {
+      marginTop: 18,
+    },
+    [theme.breakpoints.down('716')]: {
+      marginTop: -20,
+    },
+    [theme.breakpoints.down('600')]: {
+      marginTop: -35,
+    },
+    [theme.breakpoints.down('512')]: {
+      marginTop: 10,
+    },
   },
 }));
 
 export default function FrequentQuestions({ item }) {
   const classes = useStyles();
-  
-    return (
-      <>
-        <div className={classes.backgroundColor}>
-          <div className={classes.margin}>
-            <Header item={'FrequentQuestions'}/>
-            <NavbarPreguntasFrecuentes/>
-            <p align="center">Acceda facilmente a toda la información que necesita sobre cualquier producto, desde <br />
-                <p align="center">preguntas frecuentes hasta guías de instalación, controladores y descargas.</p>
-            </p>
-            <Divider variant="middle" />
-            <Box display="flex" justifyContent="center">
-              <h3>¿Cómo devuelvo un producto?</h3>
-            </Box>
-            <Box display="flex" justifyContent="center">
-              <img src={ImageStepper}  alt="SuperMall" className={classes.image}></img>
-            </Box>
-            
-            <div className={classes.root}>
-              
-              
-              <Grid container spacing={3}>
-                <Grid item xs>
-                  <Box display="flex" justifyContent="center">
-                    <h3>Inicia el proceso</h3>                    
-                  </Box>
-                  <Box display="flex" justifyContent="center">
-                    <p>Con la factura y el producto dirigirse a la tienda.</p>                     
-                  </Box>    
-                </Grid>
-                <Grid item xs>
-                  <Box display="flex" justifyContent="center">
-                   <h3>Devuelve el artículo</h3>
-                  </Box>
-                  <Box display="flex" justifyContent="center">
-                    <p>Si el vendedor acepta la devolución, y el producto esta en condiciones para ser devuelto sin rayaduras, ni golpes o algún daño causado. Entonces llena el formulario que se le proporcionará.</p>
-                  </Box>                  
-                </Grid>
-                <Grid item xs>
+
+  return (
+    <>
+      <div className={classes.backgroundColor}>
+        <div className={classes.margin}>
+          <Header item={'FrequentQuestions'} />
+          <NavbarPreguntasFrecuentes />
+          <p align="center" className={classes.backgroundColorTextNavBar}>Acceda facilmente a toda la información que necesita sobre cualquier producto, desde <br />
+            <p align="center">preguntas frecuentes hasta guías de instalación, controladores y descargas.</p>
+          </p>
+          <Divider variant="middle" />
+          <Box display="flex" justifyContent="center">
+            <h3>¿Cómo devuelvo un producto?</h3>
+          </Box>
+          <Box display="flex" justifyContent="center">
+            <img src={ImageStepper} alt="SuperMall" className={classes.image}></img>
+          </Box>
+
+          <div className={classes.root}>
+
+
+            <Grid container >
+              <Grid item xs>
+                <Box display="flex" justifyContent="center">
+                  <h3>Inicia el proceso</h3>
+                </Box>
+                <Box display="flex" justifyContent="center">
+                  <p>Con la factura y el producto dirigirse a la tienda.</p>
+                </Box>
+              </Grid>
+              <Grid item xs>
                 <Box display="flex" justifyContent="center">
                   <h3>Devuelve el artículo</h3>
                 </Box>
-                  <Box display="flex" justifyContent="center">
+                <Box display="flex" justifyContent="center">
+                  <p>Si el vendedor acepta la devolución, y el producto esta en condiciones para ser devuelto sin rayaduras, ni golpes o algún daño causado. Entonces llena el formulario que se le proporcionará.</p>
+                </Box>
+              </Grid>
+              <Grid item xs>
+                <Box display="flex" justifyContent="center">
+                  <h3>Devuelve el artículo</h3>
+                </Box>
+                <Box display="flex" justifyContent="center">
                   <p>Entrega el artículo y se reembolsa el importe de la compra.</p>
                 </Box>
-                </Grid>
               </Grid>
-            </div>
-            <div className={classes.text}>
-              <Box display="flex" justifyContent="center">
-                <h3>¿Como realizo una compra online?</h3>
-              </Box>
-            </div>          
+            </Grid>
+          </div>
+          <div className={classes.text}>
             <Box display="flex" justifyContent="center">
-              <ReactPlayer url="https://www.youtube.com/watch?v=lSm4QZqN8cA"/>
+              <h3>¿Como realizo una compra online?</h3>
             </Box>
           </div>
+          <Box display="flex" justifyContent="center">
+            <ReactPlayer url="https://www.youtube.com/watch?v=lSm4QZqN8cA" />
+          </Box>
         </div>
-      
-      </>
-        
-    )
+      </div>
+
+    </>
+
+  )
 }
