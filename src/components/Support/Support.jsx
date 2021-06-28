@@ -1,11 +1,172 @@
 import React from 'react';
 import Header from '../../layouts/Header'
+import NavbarPreguntasFrecuentes from '../../layouts/NavbarPreguntasFrecuentes'
 
-export default function Support() {
+
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+
+
+import Grid from '@material-ui/core/Grid';
+
+
+
+import CardHeader from '@material-ui/core/CardHeader';
+import Avatar from '@material-ui/core/Avatar';
+import IconButton from '@material-ui/core/IconButton';
+
+import MoreVertIcon from '@material-ui/icons/MoreVert';
+
+import MailOutlineIcon from '@material-ui/icons/MailOutline';
+import PhoneEnabledIcon from '@material-ui/icons/PhoneEnabled';
+import { Container } from '@material-ui/core';
+
+import FooterSupport from '../../layouts/FooterSupport';
+
+import Box from '@material-ui/core/Box';
+
+const useStyles = makeStyles((theme) =>({
+  root: {
+    lexGrow: 1,
+  },
+  media: {
+    height: 140,
+  },
+  paper: {
+    height: 240,
+    width: 200,
+  },
+  control: {
+    padding: theme.spacing(2),
+  },
+  text: {
+    textAlign: "center",
+  },
+  margin: {
+    marginTop:70,
+  },
+  backgroundColor: {
+      backgroundColor: "#EBEBEB"
+  },
+  backgroundColorTextNavBar:{
+    color: theme.palette.text.primary,
+    background: theme.palette.primary.main,
+    marginTop:-15,
+  },
+}));
+
+
+export default function Support({ item }) {
+    const classes = useStyles();
     return (
         <>
-            <Header item={'Support'}/>
-            <h1>SUPPORT</h1>
+            
+            
+            <div className={classes.backgroundColor}>
+                
+                <div className={classes.margin}>
+                    <Header item={'Support'}/>
+                    <NavbarPreguntasFrecuentes/>
+                    <div className={classes.backgroundColorTextNavBar}>
+                        <p align="center">Acceda facilmente a toda la información que necesita sobre cualquier producto, desde <br /> preguntas frecuentes hasta guías de instalación, controladores y descargas.</p>
+                    </div>
+
+                    <CardHeader></CardHeader>
+                    <Container maxWidth="25%">
+                    <Grid container spacing={3}>
+                        <Grid item xs={6}>
+                        
+                        <Card className={classes.root} style={{ backgroundColor: "white" }}>                
+                            <CardActionArea>                  
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" component="p" color="primary">
+                                <b>Contactar Servicio al Cliente</b>
+                                </Typography>
+                                <Typography variant="body2" color="primary" component="p"  >
+                                Si tiene una solicitud urgente con respecto a un pedido, llamenos durante el horario comercial para obtener una respuesta inmediata
+                                </Typography>
+                                
+                                <Typography variant="body2" color="primary" component="p">
+                                <div class="MuiCardHeader-root">
+                                    <div class="MuiCardHeader-avatar">
+                                    <MailOutlineIcon fontSize="large"></MailOutlineIcon>
+                                    </div>
+                                    <div class="MuiCardHeader-content">
+                                        <span class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"><b>Email Servicio al Cliente</b></span>
+                                        <span class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorPrimary MuiTypography-displayBlock">Complete un formulario corto para enviar una solicitud por correo</span>
+                                        <Button size="small"  variant="contained" color="secondary">
+                                        Email
+                                        </Button>
+                                    </div>
+                                </div>
+                                <div class="MuiCardHeader-root">
+                                    <div class="MuiCardHeader-avatar">
+                                    <PhoneEnabledIcon fontSize="large"></PhoneEnabledIcon>
+                                    </div>
+                                    <div class="MuiCardHeader-content">
+                                        <span class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"><b>Teléfono Servicio al Cliente</b></span>
+                                        <span class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorPrimary MuiTypography-displayBlock">Lunes - Sábado 9:00 am - 8:00 pm</span>
+                                        <span class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorSecondary MuiTypography-displayBlock">+591 77777777</span>
+                                    </div>
+                                </div>
+                                </Typography>
+                            </CardContent>
+                            </CardActionArea>                  
+                        </Card>
+                        </Grid>
+                        <Grid item xs={6}>
+                        <Card className={classes.root} style={{ backgroundColor: "white" }}>
+                            <CardActionArea>
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" component="p" color="primary">
+                                <b>Contactar Soporte Técnico</b> 
+                                </Typography>
+                                <Typography variant="body2" color="primary" component="p"  >
+                                ¿Tiene dudas sobre un producto que ya posee? Pregunte a un experto
+                                </Typography>
+                                
+                                <Typography variant="body2" color="primary" component="p">
+                                <div class="MuiCardHeader-root">
+                                    <div class="MuiCardHeader-avatar">
+                                    <MailOutlineIcon fontSize="large"></MailOutlineIcon>
+                                    </div>
+                                    <div class="MuiCardHeader-content">
+                                        <span class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"><b>Email Soporte Técnico</b></span>
+                                        <span class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorPrimary MuiTypography-displayBlock">Complete un formulario corto para enviar una solicitud por correo</span>
+                                        <Button size="small"  variant="contained" color="secondary">
+                                        Email
+                                        </Button>
+                                    </div>
+                                </div>
+                                <div class="MuiCardHeader-root">
+                                    <div class="MuiCardHeader-avatar">
+                                    <PhoneEnabledIcon fontSize="large"></PhoneEnabledIcon>
+                                    </div>
+                                    <div class="MuiCardHeader-content">
+                                        <span class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock"><b>Teléfono Servicio al Cliente</b></span>
+                                        <span class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorPrimary MuiTypography-displayBlock">Lunes - Sábado 9:00 am - 8:00 pm</span>
+                                        <span class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorSecondary MuiTypography-displayBlock">+591 77777777</span>
+                                    </div>
+                                </div>
+                                </Typography>
+                            </CardContent>
+                            </CardActionArea>                  
+                        </Card>
+                        </Grid> 
+                    </Grid>
+                    </Container>
+                    <div className={classes.text}>
+                    <p>Brindamos servicio técnico en la tienda.</p>
+                    </div>
+                </div>
+            <FooterSupport></FooterSupport>
+            </div>
         </>
     );
 }

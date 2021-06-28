@@ -7,6 +7,10 @@ import Consoles from './components/Console/Consoles';
 import Support from './components/Support/Support';
 import Footer from './layouts/Footer';
 
+import FrequentQuestions from'./components/Support/FrequentQuestions';
+import Ubication from './components/Support/Ubication';
+import Checkout from './components/Product/Checkout';
+
 const theme = createMuiTheme({
   palette: {
     type: 'dark',
@@ -75,6 +79,21 @@ function App() {
             exact
             path="/support"
             component={Support}
+          />
+          <Route
+            exact
+            path="/support/frequentquestions"
+            component={FrequentQuestions}
+          />
+          <Route
+            exact
+            path="/support/ubication"
+            component={Ubication}
+          />
+          <Route
+            exact
+            path="/checkout"
+            component={Checkout}
           />
         </Switch>
         <Footer />
