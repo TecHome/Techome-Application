@@ -7,6 +7,7 @@ import Items from './components/Product/Items';
 import PCs from './components/PC/PCs';
 import PC from './components/PC/PC';
 import Consoles from './components/Console/Consoles';
+import Console from './components/Console/Console';
 import Support from './components/Support/Support';
 import Footer from './layouts/Footer';
 
@@ -95,6 +96,11 @@ function App() {
             exact
             path="/consoles"
             component={Consoles}
+          />
+          <Route
+            exact
+            path="/consoles/:id"
+            component={Console}
           />
           <Route
             exact
