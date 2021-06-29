@@ -12,7 +12,7 @@ import Footer from './layouts/Footer';
 
 import FrequentQuestions from'./components/Support/FrequentQuestions';
 import Ubication from './components/Support/Ubication';
-import Checkout from './components/Product/Checkout';
+import Checkout from './components/Checkout/Checkout';
 
 const theme = createMuiTheme({
   palette: {

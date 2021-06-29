@@ -1,12 +1,9 @@
 import React, { Component } from 'react'
 import { makeStyles, Grid, Typography, Divider } from '@material-ui/core';
-
-
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
 
@@ -55,7 +52,6 @@ export default function FooterSupport() {
 
   return (
     <>
-
       <Grid className={classes.container}>
         <Grid className={classes.gridStyle}>
           <Typography className={classes.headerStyle} variante='h6'>
@@ -69,45 +65,35 @@ export default function FooterSupport() {
           <TableContainer >
             <Table className={classes.table} aria-label="simple table">
               <TableBody>
-
                 <TableRow className={classes.row} key='brand'>
                   <TableCell align="left" component="th" scope="row" className={classes.text} >Contacto</TableCell>
                   <TableCell align="left" className={classes.text} >Teléfono</TableCell>
                 </TableRow>
-
                 <TableRow className={classes.row} key='code'>
                   <TableCell align="left" component="th" scope="row" className={classes.text} >Adrian Mendoza M. </TableCell>
                   <TableCell align="left" className={classes.text} >+591 79338704</TableCell>
                 </TableRow>
-
                 <TableRow className={classes.row} key='weight'>
                   <TableCell align="left" component="th" scope="row" className={classes.text} >Giovanni Alcocer </TableCell>
                   <TableCell align="left" className={classes.text} >+591 76440489</TableCell>
                 </TableRow>
-
                 <TableRow className={classes.row} key='size'>
                   <TableCell align="left" className={classes.text} >Juan Jose Quiroga </TableCell>
                   <TableCell align="left" className={classes.text} >+591 76995009</TableCell>
                 </TableRow>
-
                 <TableRow className={classes.row} key='colors'>
                   <TableCell align="left" component="th" scope="row" className={classes.text} >Alejandra Cossio </TableCell>
                   <TableCell align="left" className={classes.text} >+591 77777777</TableCell>
                 </TableRow>
-
                 <TableRow className={classes.row} key='colors'>
                   <TableCell align="left" component="th" scope="row" className={classes.text} >Allen Vargas  </TableCell>
                   <TableCell align="left" className={classes.text} >+591 68342222</TableCell>
                 </TableRow>
-
               </TableBody>
             </Table>
           </TableContainer>
         </Grid>
-        
-
         <Divider variant="fullWidth" />
-
       </Grid>
     </>
   )

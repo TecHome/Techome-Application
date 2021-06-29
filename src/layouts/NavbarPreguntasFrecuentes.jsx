@@ -65,12 +65,9 @@ export default function Navbar({ item }) {
 
     return (
         <>
-            
             <AppBar className={classes.navbar} position="fixed" >
                 <Toolbar>
                     <Grid container spacing={3}>
-                       
-
                         <Grid className={classes.containerCenter} item xs={12} >
                             <Button
                                 className={'Support' === item ? classes.buttonSelected : classes.buttonUnselected}
@@ -93,12 +90,7 @@ export default function Navbar({ item }) {
                             >
                                 Ubicación
                             </Button>
-                    
                         </Grid>
-
-
-                        
-
                     </Grid>
                 </Toolbar>
             </AppBar>

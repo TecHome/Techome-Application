@@ -1,29 +1,15 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-
 import Header from '../../layouts/Header'
 import Grid from '@material-ui/core/Grid';
-
-import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
-import Box from '@material-ui/core/Box';
-
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-
-
-import MailOutlineIcon from '@material-ui/icons/MailOutline';
-import PhoneEnabledIcon from '@material-ui/icons/PhoneEnabled';
 import CardHeader from '@material-ui/core/CardHeader';
-
 import imageAudifono from '../../assets/images/audifono.jpg';
-
-
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -48,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
     flexWrap: 'wrap',
+    background: theme.palette.primary.main
   },
   textField: {
     marginLeft: theme.spacing(1),
@@ -88,7 +75,7 @@ export default function LayoutTextFields() {
         <Grid container >
           <Grid align="center" item xs={6} >
             <div style={{ marginLeft: '5vw', marginRight: '5vw', marginBottom: '5vw' }}>
-              <div className={classes.root} style={{ backgroundColor: "black" }}>
+              <div className={classes.root} >
                 <div>
                   <div style={{ marginLeft: '1vw', marginRight: '1vw' }}>
                     <TextField
@@ -258,7 +245,7 @@ export default function LayoutTextFields() {
 
           </Grid>
           <Grid align="center" item xs={6}>
-            <div style={{ marginTop: '2vw', marginLeft: '5vw', marginRight: '5vw', marginBottom: '5vw' }}>
+            <div style={{ marginTop: '1vw', marginLeft: '5vw', marginRight: '5vw', marginBottom: '5vw' }}>
               <Card className={classes.root} style={{ backgroundColor: "#EBEBEB" }}>
                 <CardActionArea>
                   <CardContent>
