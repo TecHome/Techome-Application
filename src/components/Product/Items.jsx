@@ -113,54 +113,47 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Items(props) {
     const classes = useStyles();
-    const [page, setPage] = useState(props.match.params.id)
+   // const [page, setPage] = useState(props.match.params.id)
     const [title, setTitle] = useState('')
     const [bg, setBg] = useState(null)
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        console.log(page)
-        setPageName();
+        //setPage(props.match.params.id);
+        setPageName(props.match.params.id);
         getDataProducts(props.match.params.id);
         window.scrollTo(0, 0);
     }, [props.match.params.id]);
 
-    function setPageName() {
+    function setPageName(page) {
         switch (page) {
             case "headphones":
                 setTitle('Audifonos');
                 setBg(Headphone);
-                console.log(title);
                 break;
             case "microphones":
                 setTitle('Microfonos');
                 setBg(Microphone);
-                console.log(title);
                 break;
             case "mouses":
                 setTitle('Mouses');
                 setBg(Mouse);
-                console.log(title);
                 break;
             case "mousepads":
                 setTitle('Mouse Pads');
                 setBg(Mousepad);
-                console.log(title);
                 break;
             case "keyboards":
                 setTitle('Teclados');
                 setBg(Keyboard);
-                console.log(title);
                 break;
             case "memories":
                 setTitle('Memorias');
                 setBg(Ram);
-                console.log(title);
                 break;
             default:
                 setTitle('Error');
                 setBg(Headphone);
-                console.log(title);
                 break;
         }
     }
@@ -171,7 +164,6 @@ export default function Items(props) {
                 return response.data;
             })
             .then((response) => {
-                console.log(response.response.filter(item => item.type === type))
                 setProducts(response.response.filter(item => item.type === type));
             })
     }

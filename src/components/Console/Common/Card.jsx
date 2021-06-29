@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, Typography, Card, ButtonGroup, Button, CardMedia, CardContent, makeStyles } from '@material-ui/core';
+import Chart from '../../Common/Chart';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -14,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop: 50,
     },
     media: {
-        height:'25vw',
+        height: '25vw',
         width: '25vw' // 16:9
     },
     containerCard: {
@@ -54,14 +55,14 @@ export default function CardConsole({ console, quantity, setQuantity }) {
 
     return (
         <>
-        <Grid className={classes.root} container>
-            <Grid align="center" item xs={12} sm={12}>
-                <Card className={classes.card}>
-                    <CardMedia
-                        className={classes.media}
-                        image={console.product.imageCard}
-                        title="Paella dish"
-                    />
+            <Grid className={classes.root} container>
+                <Grid align="center" item xs={12} sm={12}>
+                    <Card className={classes.card}>
+                        <CardMedia
+                            className={classes.media}
+                            image={console.product.imageCard}
+                            title="Paella dish"
+                        />
                         <CardContent>
                             <Grid xs={12} sm={12}>
                                 <Typography
@@ -114,15 +115,10 @@ export default function CardConsole({ console, quantity, setQuantity }) {
                                 <Grid
                                     item
                                     xs={12} sm={2}>
-                                    <Button
-                                        className={classes.button}
-                                        color="secondary"
-                                        variant="contained"
-                                    // component={Link}
-                                    // to={`/consoles/${console.id}`}
-                                    >
-                                        Comprar
-                                    </Button>
+                                    <Chart
+                                        item={console}
+                                        quantity={quantity}
+                                    />
                                 </Grid>
                             </Grid>
                         </CardContent>

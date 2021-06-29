@@ -163,7 +163,7 @@ export default function Navbar({ item }) {
                             </IconButton>
                             <IconButton className={'Chart' === item ? classes.itemRightSelected : classes.itemRight}
                                 component={Link}
-                                to="/checkout"
+                                to="/checkout/0/0"
                             >
                                 <ShoppingCart className={classes.icon} />
                             </IconButton>

@@ -121,7 +121,7 @@ function App() {
           />
           <Route
             exact
-            path="/checkout"
+            path="/checkout/:id/:quantity"
             component={Checkout}
           />
           <Route

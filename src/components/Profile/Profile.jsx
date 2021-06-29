@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Grid, Typography, Divider, CircularProgress, makeStyles } from '@material-ui/core';
-import { getUsers, getUserById, createUser } from '../../services/user'
+import { getUserById } from '../../services/user'
 import Navbar from '../../layouts/Navbar';
 import Header from './Header';
 import Info from './Info';

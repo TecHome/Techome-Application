@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Grid, Typography, Divider, CircularProgress, makeStyles } from '@material-ui/core';
 import Navbar from '../../layouts/Navbar';
 import Header from './Header';
-import { } from '../../services/user'
+import Card from './Card';
+import { getOrders } from '../../services/order'
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -26,17 +27,36 @@ const useStyles = makeStyles((theme) => ({
         fontSize: 30,
         color: theme.palette.text.primary,
     },
+    cardStyle: {
+
+    }
 }));
 
 export default function Orders() {
     const classes = useStyles();
     const [loading, setLoading] = useState(true);
+    const [orders, setOrders] = useState([])
 
     useEffect(() => {
-        setLoading(false)
-        //getUsers();
+        
+        getOrdersData();
         window.scrollTo(0, 0);
     }, []);
+
+    function getOrdersData() {
+        getOrders()
+            .then((response) => {
+                return response.data;
+            })
+            .then((response) => {
+                setOrders(response.response);
+            })
+            .then(()=>{
+                setLoading(false);
+            })
+    }
+
+
     return (
         <>
             <Navbar item={'Profile'} />
@@ -45,28 +65,21 @@ export default function Orders() {
                     <>
                         <Header item={'Orders'} />
 
-                        {/* <Grid
-                            align="center"
-                            item xs={12} sm={12}
-                        >
-                            <Typography
-                                className={classes.header}
-                                variante='h1'
+                        {orders.map(order => (
+                            <Grid
+                                container
                             >
-                                Mi Informacion
-                            </Typography>
-                        </Grid>
+                                <Grid className={classes.cardStyle}
+                                    align="center"
+                                    item xs={12} sm={12}
+                                >
+                                    <Card order={order}></Card>
+                                </Grid>
 
-                        <Info user={user}></Info> */}
-                        {/* <Grid
-                            align="center"
-                            item xs={12} sm={12}
-                            className={classes.divider}
-                        >
-                            <Divider />
-                        </Grid>
 
-                        <div className={classes.offset}></div> */}
+                            </Grid>
+                        ))}
+
                     </>
                     :
                     <Grid

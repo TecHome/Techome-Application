@@ -13,6 +13,9 @@ const useStyles = makeStyles((theme) => ({
             opacity: 0.9,
             textDecoration: 'none'
         },
+        [theme.breakpoints.down('600')]: {
+            marginLeft:'37vw'
+        },
     },
     headerSelected: {
         textAlign: 'center',
@@ -24,11 +27,14 @@ const useStyles = makeStyles((theme) => ({
             opacity: 0.9,
             textDecoration: 'none'
         },
+        [theme.breakpoints.down('600')]: {
+            marginLeft:'40vw'
+        },
     },
     divider: {
         textAlign: 'center',
-        marginRight: '40vw',
-        marginLeft: '40vw',
+        marginRight: '5vw',
+        marginLeft: '5vw',
         marginBottom: '1vw',
     },
 }));

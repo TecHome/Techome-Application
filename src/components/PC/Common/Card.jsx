@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, Typography, Card, ButtonGroup, Button, CardMedia, CardContent, makeStyles } from '@material-ui/core';
+import Chart from '../../Common/Chart';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -7,45 +8,15 @@ const useStyles = makeStyles((theme) => ({
         marginRight: '5vw',
         marginLeft: '5vw',
         width: '90vw',
-        // [theme.breakpoints.down('1324')]: {
-        //     marginRight: '3vw',
-        //     marginLeft: '3vw',
-        //     width: '93vw'
-        // },
-        // [theme.breakpoints.down('1024')]: {
-        //     marginRight: '2.5vw',
-        //     marginLeft: '2.5vw',
-        //     width: '95vw',
-        // },
-        // [theme.breakpoints.down('850')]: {
-        //     marginRight: '1vw',
-        //     marginLeft: '1vw',
-        //     width: '98vw',
-        // },
     },
     card: {
         color: theme.palette.primary.main,
         width: '50%',
         marginTop: 50,
-        // marginBottom: 20,
-        // [theme.breakpoints.down('1324')]: {
-        //     width: '75%',
-        // },
-        // [theme.breakpoints.down('1024')]: {
-        //     width: '80%',
-        // },
-        // [theme.breakpoints.down('850')]: {
-        //     width: '90%',
-        // },
-        // [theme.breakpoints.down('600')]: {
-        //     width: '70%',
-        //     // marginTop: 30,
-        //     // marginBottom: 20,
-        // },
     },
     media: {
-        height:'25vw',
-        width: '25vw' // 16:9
+        height: '25vw',
+        width: '25vw'
     },
     containerCard: {
         marginTop: 20,
@@ -159,20 +130,16 @@ export default function CardPC({ pc, quantity, setQuantity }) {
                                 <Grid
                                     item
                                     xs={12} sm={2}>
-                                    <Button
-                                        className={classes.button}
-                                        color="secondary"
-                                        variant="contained"
-                                    // component={Link}
-                                    // to={`/pcs/${pc.id}`}
-                                    >
-                                        Comprar
-                                    </Button>
+                                    <Chart
+                                        item={pc}
+                                        quantity={quantity}
+                                    />
                                 </Grid>
                             </Grid>
                         </CardContent>
                     </Card>
                 </Grid>
+
             </Grid>
 
         </>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { AppBar, Toolbar, Button, Grid, makeStyles, IconButton } from '@material-ui/core';
+import { AppBar, Toolbar, Button, Grid, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     navbar: {

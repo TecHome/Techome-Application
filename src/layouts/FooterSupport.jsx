@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { makeStyles, Grid, Typography, Divider } from '@material-ui/core';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
