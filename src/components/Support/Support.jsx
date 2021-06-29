@@ -1,28 +1,20 @@
 import React from 'react';
 import Header from '../../layouts/Header'
 import NavbarPreguntasFrecuentes from '../../layouts/NavbarPreguntasFrecuentes'
-
-
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import CardHeader from '@material-ui/core/CardHeader';
-import Avatar from '@material-ui/core/Avatar';
-import IconButton from '@material-ui/core/IconButton';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import PhoneEnabledIcon from '@material-ui/icons/PhoneEnabled';
 import { Container } from '@material-ui/core';
 import FooterSupport from '../../layouts/FooterSupport';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
-import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -83,22 +75,17 @@ export default function Support({ item }) {
     const classes = useStyles();
     return (
         <>
-
-
             <div className={classes.backgroundColor}>
-
                 <div className={classes.margin}>
                     <Header item={'Support'} />
                     <NavbarPreguntasFrecuentes  item={'Support'}  />
                     <div className={classes.backgroundColorTextNavBar}>
                         <p align="center">Acceda facilmente a toda la información que necesita sobre cualquier producto, desde <br /> preguntas frecuentes hasta guías de instalación, controladores y descargas.</p>
                     </div>
-
                     <CardHeader></CardHeader>
                     <Container maxWidth="25%">
                         <Grid container spacing={3}>
                             <Grid item xs={6}>
-
                                 <Card className={classes.root} style={{ backgroundColor: "white" }}>
                                     <CardActionArea>
                                         <CardContent>
@@ -108,7 +95,6 @@ export default function Support({ item }) {
                                             <Typography variant="body2" color="primary" component="p"  >
                                                 Si tiene una solicitud urgente con respecto a un pedido, llamenos durante el horario comercial para obtener una respuesta inmediata
                                             </Typography>
-
                                             <Typography variant="body2" color="primary" component="p">
                                                 <div class="MuiCardHeader-root">
                                                     <div class="MuiCardHeader-avatar">
@@ -150,7 +136,6 @@ export default function Support({ item }) {
                                             <Typography variant="body2" color="primary" component="p"  >
                                                 ¿Tiene dudas sobre un producto que ya posee? Pregunte a un experto
                                             </Typography>
-
                                             <Typography variant="body2" color="primary" component="p">
                                                 <div class="MuiCardHeader-root">
                                                     <div class="MuiCardHeader-avatar">

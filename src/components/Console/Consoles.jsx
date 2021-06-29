@@ -1,186 +1,180 @@
-// import React from 'react';
-// import Header from '../../layouts/Header'
-
-// export default function Consoles() {
-//     return (
-//         <>
-//             <Header item={'Consoles'}/>
-//             <h1>CONSOLES</h1>
-//         </>
-//     );
-// }
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../../layouts/Header'
-import { makeStyles } from '@material-ui/core';
-import Box from '@material-ui/core/Box';
-import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
-import Grid from '@material-ui/core/Grid';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardMedia from '@material-ui/core/CardMedia';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
+import { Grid, Typography, Divider, Card, CardHeader, Button, CardMedia, CardContent, CardActions, makeStyles } from '@material-ui/core';
+import ConsoleBanner from '../../assets/images/console/console_BG.jpg';
+import { getConsoles } from '../../services/console';
 
 const useStyles = makeStyles((theme) => ({
-    consoleBanner: {
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1558981852-426c6c22a060?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80')`,
-        height: "500px",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        position: "relative",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        color: "#fff",
-        fontSize: "4rem",
-        [theme.breakpoints.down("sm")]: {
-            height: 300,
-            fontSize: "3em"
-        }
+    container: {
+        background: theme.palette.primary.main,
     },
-    consolesTitle: {
-        fontWeight: 800,
-        paddingBottom: theme.spacing(3)
+    header: {
+        textAlign: 'center',
+        fontSize: 30,
+        color: theme.palette.text.primary,
     },
-    consolesContainer: {
-        paddingTop: theme.spacing(3)
+    divider: {
+        textAlign: 'center',
+        marginRight: '45vw',
+        marginLeft: '45vw',
+        marginBottom: '1vw',
     },
     card: {
-        maxWidth: "100%",
+        color: theme.palette.primary.main,
+        width: '70%',
+        marginTop: 50,
+        [theme.breakpoints.down('1324')]: {
+            width: '75%',
+        },
+        [theme.breakpoints.down('1024')]: {
+            width: '80%',
+        },
+        [theme.breakpoints.down('850')]: {
+            width: '90%',
+        },
+        [theme.breakpoints.down('600')]: {
+            width: '70%',
+        },
+    },
+    root: {
+        justify: "center",
+        marginRight: '5vw',
+        marginLeft: '5vw',
+        width: '90vw',
+        [theme.breakpoints.down('1324')]: {
+            marginRight: '3vw',
+            marginLeft: '3vw',
+            width: '93vw'
+        },
+        [theme.breakpoints.down('1024')]: {
+            marginRight: '2.5vw',
+            marginLeft: '2.5vw',
+            width: '95vw',
+        },
+        [theme.breakpoints.down('850')]: {
+            marginRight: '1vw',
+            marginLeft: '1vw',
+            width: '98vw',
+        },
     },
     media: {
-        height: 240
+        height:'10vw',
+        width: '10vw'
     },
-    offset: {
-        minHeight: 0,
-        [theme.breakpoints.up('716')]: {
-            minHeight: 35,
+    cardHeader: {
+        marginTop: -10,
+        textAlign: 'left',
+    },
+    button: {
+        color: theme.palette.text.primary,
+        background: theme.palette.primary.dark,
+        '&:hover': {
+            backgroundColor: theme.palette.primary.main,
+            color: theme.palette.secondary.main,
         },
-        [theme.breakpoints.up('720')]: {
-            minHeight: 41,
+    },
+    action: {
+        justifyContent: 'center',
+    },
+    content: {
+        marginBottom: -20,
+    },
+    text: {
+        overflow: "hidden",
+        textOverflow: "ellipsis",
+        height: '5rem',
+        [theme.breakpoints.down('1174')]: {
+            height: '4.4rem',
         },
-        [theme.breakpoints.up('733')]: {
-            minHeight: 6,
+        [theme.breakpoints.down('160074')]: {
+            height: '3rem',
         },
-        [theme.breakpoints.up('734')]: {
-            minHeight: 28,
-        },
-        [theme.breakpoints.up('737')]: {
-            minHeight: 22,
-        },
-        [theme.breakpoints.up('751')]: {
-            minHeight: 0,
-        },
-        [theme.breakpoints.up('1283')]: {
-            minHeight: 36,
-        },
-        [theme.breakpoints.up('1300')]: {
-            minHeight: 0,
+    },
+    dividerCard: {
+        marginTop: 50,
+        [theme.breakpoints.down('600')]: {
+            marginRight: 50,
+            marginLeft: 50,
         },
     }
 }));
 
 export default function Consoles() {
     const classes = useStyles();
+    const [consoles, setConsoles] = useState([]);
+
+    useEffect(() => {
+        getDataConsoless();
+    }, []);
+
+    function getDataConsoless() {
+        getConsoles()
+            .then((response) => {
+                return response.data;
+            })
+            .then((response) => {
+                console.log(response.response)
+                setConsoles(response.response);
+            })
+    }
+
     return (
         <>
             <Header item={'Consoles'} />
-            <div className={classes.offset} ></div>
-            <h1>CONSOLES</h1>
-            <Box className={classes.consoleBanner}>
-                <Box>SWITCH</Box>
-            </Box>
-            <Container maxWidth="lg" className={classes.consolesContainer}>
-                <Typography variant="h4" className={classes.consolesTitle}>
-                    Consolas
-                </Typography>
-                <Grid container spacing={4}>
-                    <Grid item xs={12} sm={6} md={4}>
-                        <Card className={classes.card}>
-                            <CardActionArea>
-                                <CardMedia
-                                    className={classes.media}
-                                    image="https://images.pexels.com/photos/2004161/pexels-photo-2004161.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                                    title="Contemplative Reptile"
-                                />
-                                <CardContent>
-                                    <Typography gutterBottom variant="h5" component="h2">
-                                        React useContext
-                                    </Typography>
-                                    <Typography variant="body2" color="textSecondary" component="p">
-                                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica
-                                    </Typography>
-                                </CardContent>
-                            </CardActionArea>
-                            <CardActions>
-                                <Button size="small" color="primary">
-                                    Share
-                                </Button>
-                                <Button size="small" color="primary">
-                                    Learn More
-                                </Button>
-                            </CardActions>
-                        </Card>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={4}>
-                        <Card className={classes.card}>
-                            <CardActionArea>
-                                <CardMedia
-                                    className={classes.media}
-                                    image="https://images.pexels.com/photos/2004161/pexels-photo-2004161.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                                    title="Contemplative Reptile"
-                                />
-                                <CardContent>
-                                    <Typography gutterBottom variant="h5" component="h2">
-                                        React useContext
-                                    </Typography>
-                                    <Typography variant="body2" color="textSecondary" component="p">
-                                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica
-                                    </Typography>
-                                </CardContent>
-                            </CardActionArea>
-                            <CardActions>
-                                <Button size="small" color="primary">
-                                    Share
-                                </Button>
-                                <Button size="small" color="primary">
-                                    Learn More
-                                </Button>
-                            </CardActions>
-                        </Card>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={4}>
-                        <Card className={classes.card}>
-                            <CardActionArea>
-                                <CardMedia
-                                    className={classes.media}
-                                    image="https://images.pexels.com/photos/2004161/pexels-photo-2004161.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-                                    title="Contemplative Reptile"
-                                />
-                                <CardContent>
-                                    <Typography gutterBottom variant="h5" component="h2">
-                                        React useContext
-                                    </Typography>
-                                    <Typography variant="body2" color="textSecondary" component="p">
-                                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica
-                                    </Typography>
-                                </CardContent>
-                            </CardActionArea>
-                            <CardActions>
-                                <Button size="small" color="primary">
-                                    Share
-                                </Button>
-                                <Button size="small" color="primary">
-                                    Learn More
-                                </Button>
-                            </CardActions>
-                        </Card>
-                    </Grid>
+            <Grid className={classes.container} container >
+                <Grid item xs={12} sm={12}>
+                    <Typography className={classes.header} variante='h1'>
+                        Consolas
+                    </Typography>
+                    <Divider className={classes.divider}/>
+                    <img
+                        className="d-block w-100"
+                        src={ConsoleBanner}
+                        alt='Consoles'
+                    />
                 </Grid>
-            </Container>
+                <Grid className={classes.root} container>
+                    {consoles.map(console => (
+                        <>
+                            <Grid align="center" className={classes.root2} item xs={12} sm={3}>
+                                <Card className={classes.card}>
+                                    <CardHeader
+                                        titleTypographyProps={{ variant: 'h4' }}
+                                        className={classes.cardHeader}
+                                        title={console.product.brand}
+                                    />
+                                    <CardMedia
+                                        className={classes.media}
+                                        image={console.product.imageCard}
+                                        title="Paella dish"
+                                    />
+                                    
+                                    <CardContent className={classes.content}>
+                                        <div className={classes.text}>
+                                            <Typography variant="p" align="center">
+                                                {console.product.name}
+                                            </Typography>
+                                        </div>
+                                    </CardContent>
+                                    <CardActions className={classes.action} disableSpacing>
+                                        <Button
+                                            className={classes.button}
+                                            variant="contained"
+                                            exact 
+                                            component={Link}
+                                            to={`/consoles/${console.id}`}
+                                        >
+                                            Leer Mas
+                                        </Button>
+                                    </CardActions>
+                                </Card>
+                                <Divider className={classes.dividerCard} />
+                            </Grid>
+                        </>
+                    ))}
+                </Grid>
+        </Grid>
         </>
     );
 }

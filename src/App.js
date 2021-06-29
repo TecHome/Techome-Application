@@ -7,6 +7,7 @@ import Items from './components/Product/Items';
 import PCs from './components/PC/PCs';
 import PC from './components/PC/PC';
 import Consoles from './components/Console/Consoles';
+import Console from './components/Console/Console';
 import Support from './components/Support/Support';
 import Profile from './components/Profile/Profile';
 import Orders from './components/Profile/Orders';
@@ -14,7 +15,7 @@ import Footer from './layouts/Footer';
 
 import FrequentQuestions from './components/Support/FrequentQuestions';
 import Ubication from './components/Support/Ubication';
-import Checkout from './components/Product/Checkout';
+import Checkout from './components/Checkout/Checkout';
 
 const theme = createMuiTheme({
   palette: {
@@ -97,6 +98,11 @@ function App() {
             exact
             path="/consoles"
             component={Consoles}
+          />
+          <Route
+            exact
+            path="/consoles/:id"
+            component={Console}
           />
           <Route
             exact
