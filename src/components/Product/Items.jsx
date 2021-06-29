@@ -68,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     media: {
-        height:'10vw',
+        height: '10vw',
         width: '10vw' // 16:9
     },
     cardHeader: {
@@ -167,13 +167,13 @@ export default function Items(props) {
 
     function getDataProducts(type) {
         getProducts()
-        .then((response) => {
-            return response.data;
-        })
-        .then((response) => {
-            console.log(response.response.filter(item => item.type === type))
-            setProducts(response.response.filter(item => item.type === type));
-        })
+            .then((response) => {
+                return response.data;
+            })
+            .then((response) => {
+                console.log(response.response.filter(item => item.type === type))
+                setProducts(response.response.filter(item => item.type === type));
+            })
     }
 
     return (
@@ -246,7 +246,7 @@ export default function Items(props) {
                                         <Button
                                             className={classes.button}
                                             variant="contained"
-                                            exact 
+                                            exact
                                             component={Link}
                                             to={`/products/${product.id}`}
                                         >

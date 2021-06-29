@@ -20,6 +20,19 @@ const useStyles = makeStyles((theme) => ({
     },
     itemRight: {
         padding: theme.spacing(1),
+        '&:hover': {
+            background: theme.palette.primary.dark,
+            color: theme.palette.secondary.main,
+        },
+    },
+    itemRightSelected: {
+        padding: theme.spacing(1),
+        background: theme.palette.primary.dark,
+        color: theme.palette.secondary.main,
+        '&:hover': {
+            background: theme.palette.primary.dark,
+            color: theme.palette.secondary.main,
+        },
     },
     icon: {
         fontSize: 35,
@@ -142,10 +155,16 @@ export default function Navbar({ item }) {
 
 
                         <Grid className={classes.containerRight} item xs={2}>
-                            <IconButton className={classes.itemRight} >
+                            <IconButton className={'Profile' === item ? classes.itemRightSelected : classes.itemRight}
+                                component={Link}
+                                to="/profile"
+                            >
                                 <Person className={classes.icon} />
                             </IconButton>
-                            <IconButton className={classes.itemRight} >
+                            <IconButton className={'Chart' === item ? classes.itemRightSelected : classes.itemRight}
+                                component={Link}
+                                to="/checkout"
+                            >
                                 <ShoppingCart className={classes.icon} />
                             </IconButton>
                         </Grid>

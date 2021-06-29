@@ -17,11 +17,14 @@ const useStyles = makeStyles((theme) => ({
         width: '60vw'
     },
     text: {
-        fontSize:18
+        fontSize: 18
     },
     row: {
         //background: theme.palette.primary.dark
     },
+    space: {
+        width: '7vw'
+    }
 }));
 
 export default function BasicTable({ pc }) {
@@ -39,15 +42,17 @@ export default function BasicTable({ pc }) {
 
                             {pc.product.brand ?
                                 <TableRow className={classes.row} key='brand'>
-                                    <TableCell align="left" component="th" scope="row"  className={classes.text} >Marca</TableCell>
-                                    <TableCell align="left"  className={classes.text} >{pc.product.brand}</TableCell>
+                                    <TableCell align="left" component="th" scope="row" className={classes.space} />
+                                    <TableCell align="left" component="th" scope="row" className={classes.text} >Marca</TableCell>
+                                    <TableCell align="left" className={classes.text} >{pc.product.brand}</TableCell>
                                 </TableRow>
                                 : null
                             }
 
                             {pc.product.code ?
                                 <TableRow className={classes.row} key='code'>
-                                    <TableCell align="left" component="th" scope="row"  className={classes.text} >Codigo</TableCell>
+                                    <TableCell align="left" component="th" scope="row" className={classes.space} />
+                                    <TableCell align="left" component="th" scope="row" className={classes.text} >Codigo</TableCell>
                                     <TableCell align="left" className={classes.text} >{pc.product.code}</TableCell>
                                 </TableRow>
                                 : null
@@ -55,6 +60,7 @@ export default function BasicTable({ pc }) {
 
                             {pc.processor ?
                                 <TableRow className={classes.row} key='processor'>
+                                    <TableCell align="left" component="th" scope="row" className={classes.space} />
                                     <TableCell align="left" component="th" scope="row" className={classes.text} >Procesador</TableCell>
                                     <TableCell align="left" className={classes.text} >{pc.processor}</TableCell>
                                 </TableRow>
@@ -63,6 +69,7 @@ export default function BasicTable({ pc }) {
 
                             {pc.motherBoard ?
                                 <TableRow className={classes.row} key='motherBoard'>
+                                    <TableCell align="left" component="th" scope="row" className={classes.space} />
                                     <TableCell align="left" className={classes.text} >Tarjeta Madre</TableCell>
                                     <TableCell align="left" className={classes.text} >{pc.motherBoard}</TableCell>
                                 </TableRow>
@@ -71,6 +78,7 @@ export default function BasicTable({ pc }) {
 
                             {pc.sd ?
                                 <TableRow className={classes.row} key='sd'>
+                                    <TableCell align="left" component="th" scope="row" className={classes.space} />
                                     <TableCell align="left" component="th" scope="row" className={classes.text} >Memoria</TableCell>
                                     <TableCell align="left" className={classes.text} >{pc.sd}</TableCell>
                                 </TableRow>
@@ -79,6 +87,7 @@ export default function BasicTable({ pc }) {
 
                             {pc.ram ?
                                 <TableRow className={classes.row} key='ram'>
+                                    <TableCell align="left" component="th" scope="row" className={classes.space} />
                                     <TableCell align="left" component="th" scope="row" className={classes.text} >Ram</TableCell>
                                     <TableCell align="left" className={classes.text} >{pc.ram}</TableCell>
                                 </TableRow>
@@ -87,6 +96,7 @@ export default function BasicTable({ pc }) {
 
                             {pc.videoCard ?
                                 <TableRow className={classes.row} key='videoCard'>
+                                    <TableCell align="left" component="th" scope="row" className={classes.space} />
                                     <TableCell align="left" component="th" scope="row" className={classes.text} >Grafica</TableCell>
                                     <TableCell align="left" className={classes.text} >{pc.videoCard}</TableCell>
                                 </TableRow>
@@ -95,6 +105,7 @@ export default function BasicTable({ pc }) {
 
                             {pc.keyboard ?
                                 <TableRow className={classes.row} key='keyboard'>
+                                    <TableCell align="left" component="th" scope="row" className={classes.space} />
                                     <TableCell align="left" component="th" scope="row" className={classes.text} >Teclado</TableCell>
                                     <TableCell align="left" className={classes.text} >{pc.keyboard}</TableCell>
                                 </TableRow>
@@ -103,6 +114,7 @@ export default function BasicTable({ pc }) {
 
                             {pc.cooling ?
                                 <TableRow className={classes.row} key='cooling'>
+                                    <TableCell align="left" component="th" scope="row" className={classes.space} />
                                     <TableCell align="left" component="th" scope="row" className={classes.text} >Refrigeracion</TableCell>
                                     <TableCell align="left" className={classes.text} >{pc.cooling}</TableCell>
                                 </TableRow>
@@ -111,6 +123,7 @@ export default function BasicTable({ pc }) {
 
                             {pc.screen ?
                                 <TableRow className={classes.row} key='screen'>
+                                    <TableCell align="left" component="th" scope="row" className={classes.space} />
                                     <TableCell align="left" component="th" scope="row" className={classes.text} >Pantalla</TableCell>
                                     <TableCell align="left" className={classes.text} >{pc.screen}</TableCell>
                                 </TableRow>
@@ -119,6 +132,7 @@ export default function BasicTable({ pc }) {
 
                             {pc.mouse ?
                                 <TableRow className={classes.row} key='mouse'>
+                                    <TableCell align="left" component="th" scope="row" className={classes.space} />
                                     <TableCell align="left" component="th" scope="row" className={classes.text} >Mouse</TableCell>
                                     <TableCell align="left" className={classes.text} >{pc.mouse}</TableCell>
                                 </TableRow>
@@ -127,6 +141,7 @@ export default function BasicTable({ pc }) {
 
                             {pc.speakers ?
                                 <TableRow className={classes.row} key='speakers'>
+                                    <TableCell align="left" component="th" scope="row" className={classes.space} />
                                     <TableCell align="left" component="th" scope="row" className={classes.text} >Sonido</TableCell>
                                     <TableCell align="left" className={classes.text} >{pc.speakers}</TableCell>
                                 </TableRow>
@@ -135,6 +150,7 @@ export default function BasicTable({ pc }) {
 
                             {pc.powerUsage ?
                                 <TableRow className={classes.row} key='powerUsage'>
+                                    <TableCell align="left" component="th" scope="row" className={classes.space} />
                                     <TableCell align="left" component="th" scope="row" className={classes.text} >Bateria</TableCell>
                                     <TableCell align="left" className={classes.text} >{pc.powerUsage}</TableCell>
                                 </TableRow>
@@ -143,6 +159,7 @@ export default function BasicTable({ pc }) {
 
                             {pc.case ?
                                 <TableRow className={classes.row} key='case'>
+                                    <TableCell align="left" component="th" scope="row" className={classes.space} />
                                     <TableCell align="left" component="th" scope="row" className={classes.text} >Case</TableCell>
                                     <TableCell align="left" className={classes.text} >{pc.case}</TableCell>
                                 </TableRow>

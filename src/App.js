@@ -8,9 +8,10 @@ import PCs from './components/PC/PCs';
 import PC from './components/PC/PC';
 import Consoles from './components/Console/Consoles';
 import Support from './components/Support/Support';
+import Profile from './components/Profile/Profile';
 import Footer from './layouts/Footer';
 
-import FrequentQuestions from'./components/Support/FrequentQuestions';
+import FrequentQuestions from './components/Support/FrequentQuestions';
 import Ubication from './components/Support/Ubication';
 import Checkout from './components/Product/Checkout';
 
@@ -115,6 +116,11 @@ function App() {
             exact
             path="/checkout"
             component={Checkout}
+          />
+          <Route
+            exact
+            path="/profile"
+            component={Profile}
           />
         </Switch>
         <Footer />

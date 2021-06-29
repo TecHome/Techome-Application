@@ -1,11 +1,5 @@
 import React from 'react';
-import { Grid, makeStyles } from '@material-ui/core';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
+import { Grid, Table, TableBody, TableCell, TableContainer, TableRow, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -22,6 +16,9 @@ const useStyles = makeStyles((theme) => ({
     row: {
         //background: theme.palette.primary.dark
     },
+    space: {
+        width: '7vw'
+    }
 }));
 
 export default function BasicTable({ product }) {
@@ -39,6 +36,7 @@ export default function BasicTable({ product }) {
 
                             {product.product.brand ?
                                 <TableRow className={classes.row} key='brand'>
+                                    <TableCell align="left" component="th" scope="row" className={classes.space} />
                                     <TableCell align="left" component="th" scope="row"  className={classes.text} >Marca</TableCell>
                                     <TableCell align="left"  className={classes.text} >{product.product.brand}</TableCell>
                                 </TableRow>
@@ -47,6 +45,7 @@ export default function BasicTable({ product }) {
 
                             {product.product.code ?
                                 <TableRow className={classes.row} key='code'>
+                                    <TableCell align="left" component="th" scope="row" className={classes.space} />
                                     <TableCell align="left" component="th" scope="row"  className={classes.text} >Codigo</TableCell>
                                     <TableCell align="left" className={classes.text} >{product.product.code}</TableCell>
                                 </TableRow>
@@ -55,6 +54,7 @@ export default function BasicTable({ product }) {
 
                             {product.weight ?
                                 <TableRow className={classes.row} key='weight'>
+                                    <TableCell align="left" component="th" scope="row" className={classes.space} />
                                     <TableCell align="left" component="th" scope="row" className={classes.text} >Peso</TableCell>
                                     <TableCell align="left" className={classes.text} >{product.weight}</TableCell>
                                 </TableRow>
@@ -63,6 +63,7 @@ export default function BasicTable({ product }) {
 
                             {product.size ?
                                 <TableRow className={classes.row} key='size'>
+                                    <TableCell align="left" component="th" scope="row" className={classes.space} />
                                     <TableCell align="left" className={classes.text} >Dimensiones</TableCell>
                                     <TableCell align="left" className={classes.text} >{product.size}</TableCell>
                                 </TableRow>
@@ -71,6 +72,7 @@ export default function BasicTable({ product }) {
 
                             {product.colors ?
                                 <TableRow className={classes.row} key='colors'>
+                                    <TableCell align="left" component="th" scope="row" className={classes.space} />
                                     <TableCell align="left" component="th" scope="row" className={classes.text} >Colores</TableCell>
                                     <TableCell align="left" className={classes.text} >{product.colors}</TableCell>
                                 </TableRow>

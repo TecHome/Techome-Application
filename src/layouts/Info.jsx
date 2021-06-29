@@ -63,7 +63,7 @@ export default function Info() {
                                 Contactanos
                             </Typography>
                             <Typography className={classes.numberStyle} variante='h6' >
-                                +591 77777777
+                                +591 79338704
                             </Typography>
                             <Typography className={classes.numberStyle} variante='h6' >
                                 techome@gmail.com

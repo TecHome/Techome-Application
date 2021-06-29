@@ -82,8 +82,8 @@ export default function FrequentQuestions({ item }) {
     <>
       <div className={classes.backgroundColor}>
         <div className={classes.margin}>
-          <Header item={'FrequentQuestions'} />
-          <NavbarPreguntasFrecuentes />
+          <Header item={'Support'} />
+          <NavbarPreguntasFrecuentes  item={'FrequentQuestions'}  />
           <p align="center" className={classes.backgroundColorTextNavBar}>Acceda facilmente a toda la información que necesita sobre cualquier producto, desde <br />
             <p align="center">preguntas frecuentes hasta guías de instalación, controladores y descargas.</p>
           </p>
