@@ -1,14 +1,10 @@
 import React from 'react'
 import Header from '../../layouts/Header'
 import NavbarPreguntasFrecuentes from '../../layouts/NavbarPreguntasFrecuentes'
-
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
 import imageSuperMall from '../../assets/images/ubication/supermall.jpg'
-
 import { Divider } from '@material-ui/core';
-
-
 import GoogleMap from '../../components/GoogleMap/GoogleMap'
 
 
@@ -85,24 +81,14 @@ export default function Ubication({ item }) {
             <p align="center">casi Av. Perú Cochabamba, Bolivia </p>
           </p>
           <Divider variant="middle" />
-
-          <Box display="flex" justifyContent="center" style={{marginLeft:"-700px", height:350,marginBottom:"50px",marginTop:"45px"}}>
+          <Box display="flex" justifyContent="center" style={{ marginLeft: "-700px", height: 350, marginBottom: "50px", marginTop: "45px" }}>
             <GoogleMap />
-
           </Box>
-
-
-
-
-
-
           <Box display="flex" justifyContent="center">
             <img src={imageSuperMall} alt="SuperMall" width="700" height="400"></img>
           </Box>
         </div>
       </div>
-
     </>
-
   )
 }
