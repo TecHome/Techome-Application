@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '4.5vw',
     },
     header: {
-        marginTop:20,
+        marginTop: 20,
         textAlign: 'center',
         fontSize: 30,
         color: theme.palette.text.primary,
@@ -72,6 +72,15 @@ export default function Profile() {
                         </Grid>
 
                         <Info user={user}></Info>
+
+                        <Grid
+                            align="center"
+                            item xs={12} sm={12}
+                            className={classes.divider}
+                        >
+                            <Divider />
+                        </Grid>
+                        <div className={classes.offset}></div>  
                     </>
                     :
                     <Grid
@@ -82,15 +91,7 @@ export default function Profile() {
                     </Grid>
                 }
 
-                <Grid
-                    align="center"
-                    item xs={12} sm={12}
-                    className={classes.divider}
-                >
-                    <Divider />
-                </Grid>
 
-                <div className={classes.offset}></div>
             </Grid>
         </>
     );

@@ -9,6 +9,7 @@ import PC from './components/PC/PC';
 import Consoles from './components/Console/Consoles';
 import Support from './components/Support/Support';
 import Profile from './components/Profile/Profile';
+import Orders from './components/Profile/Orders';
 import Footer from './layouts/Footer';
 
 import FrequentQuestions from './components/Support/FrequentQuestions';
@@ -121,6 +122,11 @@ function App() {
             exact
             path="/profile"
             component={Profile}
+          />
+          <Route
+            exact
+            path="/orders"
+            component={Orders}
           />
         </Switch>
         <Footer />
